@@ -32,13 +32,14 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openAlgorithmEncryptingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.permutationCipherVigenerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.polyalphabeticCipherVigenerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.streamCipherVigenerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.keyExchangeDiffiHallmanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.propertyWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.layotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.polyalphabeticCipherVigenerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.streamCipherVigenerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.keyExchangeDiffiHallmanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rSAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +69,8 @@
             this.permutationCipherVigenerToolStripMenuItem,
             this.polyalphabeticCipherVigenerToolStripMenuItem,
             this.streamCipherVigenerToolStripMenuItem,
-            this.keyExchangeDiffiHallmanToolStripMenuItem});
+            this.keyExchangeDiffiHallmanToolStripMenuItem,
+            this.rSAToolStripMenuItem});
             this.openAlgorithmEncryptingToolStripMenuItem.Name = "openAlgorithmEncryptingToolStripMenuItem";
             this.openAlgorithmEncryptingToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.openAlgorithmEncryptingToolStripMenuItem.Text = "Open Algorithm Encrypting";
@@ -76,40 +78,9 @@
             // permutationCipherVigenerToolStripMenuItem
             // 
             this.permutationCipherVigenerToolStripMenuItem.Name = "permutationCipherVigenerToolStripMenuItem";
-            this.permutationCipherVigenerToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.permutationCipherVigenerToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.permutationCipherVigenerToolStripMenuItem.Text = "Permutation Cipher Vigener";
             this.permutationCipherVigenerToolStripMenuItem.Click += new System.EventHandler(this.PermutationCipherVigenerToolStripMenuItem_Click);
-            // 
-            // propertyWindowToolStripMenuItem
-            // 
-            this.propertyWindowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.layotToolStripMenuItem});
-            this.propertyWindowToolStripMenuItem.Name = "propertyWindowToolStripMenuItem";
-            this.propertyWindowToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
-            this.propertyWindowToolStripMenuItem.Text = "Property Window";
-            // 
-            // layotToolStripMenuItem
-            // 
-            this.layotToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cascadeToolStripMenuItem,
-            this.verticalToolStripMenuItem});
-            this.layotToolStripMenuItem.Name = "layotToolStripMenuItem";
-            this.layotToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.layotToolStripMenuItem.Text = "Layot";
-            // 
-            // cascadeToolStripMenuItem
-            // 
-            this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cascadeToolStripMenuItem.Text = "Cascade";
-            this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
-            // 
-            // verticalToolStripMenuItem
-            // 
-            this.verticalToolStripMenuItem.Name = "verticalToolStripMenuItem";
-            this.verticalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.verticalToolStripMenuItem.Text = "Vertical";
-            this.verticalToolStripMenuItem.Click += new System.EventHandler(this.VerticalToolStripMenuItem_Click);
             // 
             // polyalphabeticCipherVigenerToolStripMenuItem
             // 
@@ -131,6 +102,44 @@
             this.keyExchangeDiffiHallmanToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.keyExchangeDiffiHallmanToolStripMenuItem.Text = "Key Exchange Diffi- Hallman";
             this.keyExchangeDiffiHallmanToolStripMenuItem.Click += new System.EventHandler(this.keyExchangeDiffiHallmanToolStripMenuItem_Click);
+            // 
+            // propertyWindowToolStripMenuItem
+            // 
+            this.propertyWindowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.layotToolStripMenuItem});
+            this.propertyWindowToolStripMenuItem.Name = "propertyWindowToolStripMenuItem";
+            this.propertyWindowToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+            this.propertyWindowToolStripMenuItem.Text = "Property Window";
+            // 
+            // layotToolStripMenuItem
+            // 
+            this.layotToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cascadeToolStripMenuItem,
+            this.verticalToolStripMenuItem});
+            this.layotToolStripMenuItem.Name = "layotToolStripMenuItem";
+            this.layotToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.layotToolStripMenuItem.Text = "Layot";
+            // 
+            // cascadeToolStripMenuItem
+            // 
+            this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.cascadeToolStripMenuItem.Text = "Cascade";
+            this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
+            // 
+            // verticalToolStripMenuItem
+            // 
+            this.verticalToolStripMenuItem.Name = "verticalToolStripMenuItem";
+            this.verticalToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.verticalToolStripMenuItem.Text = "Vertical";
+            this.verticalToolStripMenuItem.Click += new System.EventHandler(this.VerticalToolStripMenuItem_Click);
+            // 
+            // rSAToolStripMenuItem
+            // 
+            this.rSAToolStripMenuItem.Name = "rSAToolStripMenuItem";
+            this.rSAToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.rSAToolStripMenuItem.Text = "RSA";
+            this.rSAToolStripMenuItem.Click += new System.EventHandler(this.rSAToolStripMenuItem_Click);
             // 
             // BaseForm
             // 
@@ -164,6 +173,7 @@
         private System.Windows.Forms.ToolStripMenuItem polyalphabeticCipherVigenerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem streamCipherVigenerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem keyExchangeDiffiHallmanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rSAToolStripMenuItem;
     }
 }
 

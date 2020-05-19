@@ -76,6 +76,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rsa\RSACipherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rsa\RSACipherForm.Designer.cs">
+      <DependentUpon>RSACipherForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rsa\RSAcipherClass.cs" />
     <Compile Include="stream cipher\StreamCipherClass.cs" />
     <Compile Include="stream cipher\StreamCipherForm.cs">
       <SubType>Form</SubType>
@@ -104,6 +111,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="rsa\RSACipherForm.resx">
+      <DependentUpon>RSACipherForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="stream cipher\StreamCipherForm.resx">
       <DependentUpon>StreamCipherForm.cs</DependentUpon>
     </EmbeddedResource>

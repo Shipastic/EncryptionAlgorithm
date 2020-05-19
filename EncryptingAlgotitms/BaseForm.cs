@@ -1,6 +1,7 @@
 ﻿using EncryptingAlgotitms.key_exchage_DH;
 using EncryptingAlgotitms.permutation_cipher;
 using EncryptingAlgotitms.polyalphabetic_cipher;
+using EncryptingAlgotitms.rsa;
 using EncryptingAlgotitms.stream_cipher;
 using System;
 using System.Collections.Generic;
@@ -66,6 +67,15 @@ namespace EncryptingAlgotitms
                 MdiParent = this
             };
             Kef.Show();
+        }
+
+        private void rSAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RSACipherForm rsaForm = new RSACipherForm
+            {
+                MdiParent = this
+            };
+            rsaForm.Show();
         }
     }
 }
