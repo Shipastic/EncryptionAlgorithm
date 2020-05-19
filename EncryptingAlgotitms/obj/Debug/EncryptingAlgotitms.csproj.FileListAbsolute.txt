@@ -1,0 +1,14 @@
+C:\Users\Den\source\repos\EncryptingAlgotitms\EncryptingAlgotitms\bin\Debug\EncryptingAlgotitms.exe.config
+C:\Users\Den\source\repos\EncryptingAlgotitms\EncryptingAlgotitms\bin\Debug\EncryptingAlgotitms.exe
+C:\Users\Den\source\repos\EncryptingAlgotitms\EncryptingAlgotitms\bin\Debug\EncryptingAlgotitms.pdb
+C:\Users\Den\source\repos\EncryptingAlgotitms\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.csprojAssemblyReference.cache
+C:\Users\Den\source\repos\EncryptingAlgotitms\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.Properties.Resources.resources
+C:\Users\Den\source\repos\EncryptingAlgotitms\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.csproj.GenerateResource.cache
+C:\Users\Den\source\repos\EncryptingAlgotitms\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.csproj.CoreCompileInputs.cache
+C:\Users\Den\source\repos\EncryptingAlgotitms\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.exe
+C:\Users\Den\source\repos\EncryptingAlgotitms\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.pdb
+C:\Users\Den\source\repos\EncryptingAlgotitms\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.BaseForm.resources
+C:\Users\Den\source\repos\EncryptingAlgotitms\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.permutation_cipher.PermutationCipherVigener.resources
+C:\Users\Den\source\repos\EncryptingAlgotitms\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.polyalphabetic_cipher.PolyalphabeticCipherForm.resources
+C:\Users\Den\source\repos\EncryptingAlgotitms\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.stream_cipher.StreamCipherForm.resources
+C:\Users\Den\source\repos\EncryptingAlgotitms\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.key_exchage_DH.KeyExchangeForm.resources
