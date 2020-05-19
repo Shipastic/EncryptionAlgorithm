@@ -31,6 +31,8 @@ namespace EncryptingAlgotitms
             return "Виртуальный метод Шифрования базового класса";
         }
 
+        public virtual void Encrypt(string str1, string str2, DataGridView gridView) { }//Метод для зашифровки сообщения
+  
         public virtual string Encrypt(int num1, int num2, DataGridView gridView) //Метод для зашифровки сообщения
         {
             return "Виртуальный метод Шифрования базового класса";
@@ -46,6 +48,10 @@ namespace EncryptingAlgotitms
         }
 
         public virtual string Decrypt(string str1, long number, long number2) //Метод для зашифровки сообщения
+        {
+            return "Виртуальный метод Шифрования базового класса";
+        }
+        public virtual string Decrypt(string str1, string str2, DataGridView gridView) //Метод для зашифровки сообщения
         {
             return "Виртуальный метод Шифрования базового класса";
         }

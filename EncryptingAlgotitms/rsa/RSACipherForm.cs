@@ -12,7 +12,7 @@ namespace EncryptingAlgotitms.rsa
 {
     public partial class RSACipherForm : Form
     {
-
+        //Создание экземпляра класса для доступа к его методам
         RSAcipherClass rSAcipherClass = new RSAcipherClass();
         public RSACipherForm()
         {
@@ -20,7 +20,12 @@ namespace EncryptingAlgotitms.rsa
         }
 
 
-        //=====================================
+//===========================================================================
+        /// <summary>
+        /// Обработчик кнопки Generate P
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButGenP_Click(object sender, EventArgs e)
         {
             rSAcipherClass.GenerateP();
@@ -28,7 +33,12 @@ namespace EncryptingAlgotitms.rsa
             ShowNumber();
         }
 
-        //=====================================
+//===========================================================================
+        /// <summary>
+        /// Обработчик кнопки Generate Q
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButGenQ_Click(object sender, EventArgs e)
         {
             rSAcipherClass.GenerateQ();
@@ -36,9 +46,9 @@ namespace EncryptingAlgotitms.rsa
             ShowNumber();
         }
 
-        //=====================================
+//===========================================================================
         /// <summary>
-        /// Конвертация и отображение значений в текстбоксах
+        ///Метод для вывода значений в текстбоксах
         /// </summary>
         private void ShowNumber()
         {
@@ -52,9 +62,9 @@ namespace EncryptingAlgotitms.rsa
             textGetN_2.Text = textN.Text;
         }
 
-        //=====================================
+//===========================================================================
         /// <summary>
-        /// Показ значений чисел E и D
+        /// Метод для  вывода значений чисел E и D
         /// </summary>
         private void ShowKeys()
         {
@@ -64,7 +74,7 @@ namespace EncryptingAlgotitms.rsa
             textGetD.Text = textD.Text;
         }
 
-        //=====================================
+//===========================================================================
         /// <summary>
         /// Метод, скрывающий ноль в textbox-e
         /// </summary>
@@ -78,7 +88,12 @@ namespace EncryptingAlgotitms.rsa
                 return "";
         }
 
-        //=====================================
+//===========================================================================
+        /// <summary>
+        /// Обработчик кнопки Generate E
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButGenE_Click(object sender, EventArgs e)
         {
             rSAcipherClass.GenerateE();
@@ -88,7 +103,12 @@ namespace EncryptingAlgotitms.rsa
             ShowKeys();
         }
 
-        //=====================================
+//===========================================================================
+        /// <summary>
+        /// Обработчик кнопки Calculate D
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Butfindd_click(object sender, EventArgs e)
         {
             rSAcipherClass.GenerateD();
@@ -99,14 +119,19 @@ namespace EncryptingAlgotitms.rsa
         }
 
 
-        //=====================================
+//===========================================================================
+        /// <summary>
+        /// Обработчик кнопки Шифровать
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButEncrypt_Click(object sender, EventArgs e)
         {
             FillGridRSA();//инициализация DataGrid
-            ShifrRSA();// Шифрование
+            rSAcipherClass.Encrypt(textGetE.Text, textGetN_1.Text, gridRSA);// Шифрование
         }
 
-        //=====================================
+//===========================================================================
         /// <summary>
         /// Метод, добавляющий символы из сообщения в столбцы colLetter и colASCII
         /// </summary>
@@ -126,54 +151,17 @@ namespace EncryptingAlgotitms.rsa
             }
         }
 
-        //=====================================
+//===========================================================================
         /// <summary>
-        /// Метод Шифрования сообщения
+        /// Обработчик кнопки Дешифровать
         /// </summary>
-        void ShifrRSA()
-        {
-            int e = int.Parse(textGetE.Text);
-            int n = int.Parse(textGetN_1.Text);
-
-            // перебираем все строки и конвертируем символы в них
-            for (int row = 0; row < gridRSA.Rows.Count; row++)
-            {
-                // распарсим из столбца colASCII строки row 
-                int openMessage = int.Parse(gridRSA["colASCII", row].Value.ToString());
-                // Шифруем каждый символ
-                int charEncrypting = rSAcipherClass.ShifrMEssage(openMessage, e, n);
-                // В столбец colEncrypt добавляем полученное значение
-                gridRSA["colEncrypt", row].Value = charEncrypting;
-            }
-        }
-
-        //=====================================
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButDecrypt_Click(object sender, EventArgs e)
         {
             // вызываем метод дешифрования
-            DeShifrRSA();
-        }
-
-        //=====================================
-        /// <summary>
-        /// Метод дешифрования сообщения
-        /// </summary>
-        void DeShifrRSA()
-        {
-            int d = int.Parse(textGetD.Text);
-            int n = int.Parse(textGetN_2.Text);
-            string decryptMessage = "";
-            for (int row = 0; row < gridRSA.Rows.Count; row++)
-            {
-                int charEncrypting = int.Parse(gridRSA["colEncrypt", row].Value.ToString());
-                // Дешифруем сообщение
-                int charDecrypting = rSAcipherClass.DeShifrMEssage(charEncrypting, d, n);
-                // добавляем полученные символы в столбец colReLetter
-                gridRSA["colDecrypt", row].Value = charDecrypting;
-                gridRSA["colReLetter", row].Value = (char)charDecrypting;
-                decryptMessage += (char)charDecrypting;
-            }
-            textPrivateMessage.Text = decryptMessage;
+            textPrivateMessage.Text = rSAcipherClass.Decrypt(textGetD.Text, textGetN_2.Text, gridRSA);
+          
         }
     }
 }

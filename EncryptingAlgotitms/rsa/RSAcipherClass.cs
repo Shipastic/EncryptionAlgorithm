@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace EncryptingAlgotitms.rsa
 {
-    class RSAcipherClass
+    class RSAcipherClass:BaseClassEncrypting
     {
         const int minPrime = 100;
         const int maxPrime = 500;
@@ -20,9 +21,9 @@ namespace EncryptingAlgotitms.rsa
         /// <summary>
         /// Генератор случайных чисел
         /// </summary>
-        static Random random = new Random();
+        static readonly Random random = new Random();
 
-        //==========================================
+//===========================================================================
         ///<summary>
         ///Метод для определения простого числа
         /// </summary>
@@ -45,7 +46,7 @@ namespace EncryptingAlgotitms.rsa
             return true;
         }
 
-        //==========================================
+//===========================================================================
         ///<summary>
         ///Метод генерирующий случайное простое число
         ///</summary>
@@ -65,7 +66,7 @@ namespace EncryptingAlgotitms.rsa
             throw new Exception("Простое число не найдено");
         }
 
-        //==========================================
+//===========================================================================
         /// <summary>
         /// Методы для инициализации полей P и Q простыми случайнвми числами
         /// </summary>
@@ -80,7 +81,7 @@ namespace EncryptingAlgotitms.rsa
             CalcNumbers();
         }
 
-        //==========================================
+//===========================================================================
         /// <summary>
         /// Метод для вычисления значений N и F
         /// </summary>
@@ -91,7 +92,7 @@ namespace EncryptingAlgotitms.rsa
             f = (p - 1) * (q - 1);
         }
 
-        //==========================================
+//===========================================================================
         ///<summary>
         ///Метод нахождения нпибольшего общего делителя(алгоритм Евклида)
         ///</summary>
@@ -102,7 +103,7 @@ namespace EncryptingAlgotitms.rsa
             return a;
         }
 
-        //==========================================
+//===========================================================================
         /// <summary>
         /// Метод для генерации числа E
         /// </summary>
@@ -122,7 +123,7 @@ namespace EncryptingAlgotitms.rsa
             throw new Exception("Can' t found E Value!");
         }
 
-        //==========================================
+//===========================================================================
         /// <summary>
         /// Метод для генерации числа D
         /// </summary>
@@ -142,7 +143,7 @@ namespace EncryptingAlgotitms.rsa
             throw new Exception("Can' t found D Value");
         }
 
-        //==========================================
+//===========================================================================
         /// <summary>
         /// Метод, вычисляющий значение выражения a^b по модулю mod
         /// </summary>
@@ -158,7 +159,7 @@ namespace EncryptingAlgotitms.rsa
             return (int)res;
         }
 
-        //==========================================
+//===========================================================================
         /// <summary>
         /// Метод шифрования сообщения
         /// </summary>
@@ -170,6 +171,7 @@ namespace EncryptingAlgotitms.rsa
             return Power(textMessageRSA, e, n);
         }
 
+//===========================================================================
         /// <summary>
         /// Метод дешифровки сообщения
         /// </summary>
@@ -180,6 +182,56 @@ namespace EncryptingAlgotitms.rsa
         public int DeShifrMEssage(int textShifrRSA, int d, int n)
         {
             return Power(textShifrRSA, d, n);
+        }
+
+//===========================================================================
+        /// <summary>
+        /// Метод Шифрования сообщения
+        /// </summary>
+        /// <param name="textE">Число E</param>
+        /// <param name="textN">Число N</param>
+        /// <param name="grdRsa">Сетка для вывода символов</param>
+        public override void Encrypt(string textE, string textN, DataGridView grdRsa )
+        {
+            int e = int.Parse(textE);
+            int n = int.Parse(textN);
+
+            // перебираем все строки и конвертируем символы в них
+            for (int row = 0; row < grdRsa.Rows.Count; row++)
+            {
+                // распарсим из столбца colASCII строки row 
+                int openMessage = int.Parse(grdRsa["colASCII", row].Value.ToString());
+                // Шифруем каждый символ
+                int charEncrypting = ShifrMEssage(openMessage, e, n);
+                // В столбец colEncrypt добавляем полученное значение
+                grdRsa["colEncrypt", row].Value = charEncrypting;
+            }
+        }
+
+//===========================================================================
+        /// <summary>
+        ///  Метод дешифрования сообщения
+        /// </summary>
+        /// <param name="textD">Число D</param>
+        /// <param name="textN">Число N</param>
+        /// <param name="grdRsa">Сетка для вывода символов</param>
+        /// <returns></returns>
+        public override string Decrypt(string textD, string textN, DataGridView grdRsa)
+        {
+            int d = int.Parse(textD);
+            int n = int.Parse(textN);
+            string decryptMessage = "";
+            for (int row = 0; row < grdRsa.Rows.Count; row++)
+            {
+                int charEncrypting = int.Parse(grdRsa["colEncrypt", row].Value.ToString());
+                // Дешифруем сообщение
+                int charDecrypting = DeShifrMEssage(charEncrypting, d, n);
+                // добавляем полученные символы в столбец colReLetter
+                grdRsa["colDecrypt", row].Value = charDecrypting;
+                grdRsa["colReLetter", row].Value = (char)charDecrypting;
+                decryptMessage += (char)charDecrypting;
+            }
+              return decryptMessage;
         }
     }
 }
