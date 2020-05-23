@@ -21,72 +21,11 @@ namespace EncryptingAlgotitms.key_exchage_DH
         long g;
         long X;
         long Y;
-        long BKey;
-        long AKey;
 
         public KeyExchangeForm()
         {
             InitializeComponent();
         }
-        ////========================================
-        ///// <summary>
-        ///// Метод для нахождения числа по модулю p
-        ///// </summary>
-        ///// <param name="a">Число</param>
-        ///// <param name="b">Степень</param>
-        ///// <returns></returns>
-        //long MultMod(long a, long b)
-        //{
-        //    return (a * b) % p;
-        //}
-
-        ////========================================
-        ///// <summary>
-        ///// Метод для возведения в степень
-        ///// </summary>
-        ///// <param name="a">Число</param>
-        ///// <param name="exp">Степень</param>
-        ///// <returns></returns>
-        //public long Powermod(long a, long exp)
-        //{
-        //    long result = 1;
-        //    for (long i = 0; i < exp; i++)
-        //    {
-        //        result = MultMod(result, a);
-        //    }
-        //    return result;
-        //}
-
-        //========================================
-        /// <summary>
-        /// Метод, проверяющий простое число или нет
-        /// </summary>
-        /// <param name="num">заданное число</param>
-        /// <returns></returns>
-        bool IsPrime(long num)
-        {
-            if (num < 2) return false;
-            if (num == 2 || num == 3) return true;
-            if (num % 2 == 0) return false;
-            long max = Convert.ToInt64(Math.Sqrt(num));
-            for (int i = 3; i <= max; i += 2)
-            {
-                if (num % i == 0)
-                    return false;
-            }
-            return true;
-        }
-
-        ////========================================
-        ///// <summary>
-        ///// Метод для считывания значений P и G из текстовых полей
-        ///// </summary>
-        //void GetPG()
-        //{
-        //    p = Convert.ToInt32(textP.Text);
-        //    g = Convert.ToInt32(textG.Text);
-        //}
-
         //========================================
         private void Label7_Click(object sender, EventArgs e)
         {
@@ -120,7 +59,7 @@ namespace EncryptingAlgotitms.key_exchage_DH
         private void ButP_Click(object sender, EventArgs e)
         {
             p = rand.Next((int)minPrime, (int)maxPrime);
-            while (!IsPrime(p))
+            while (!Kec.IsPrime(p))
             {
                 p++;
             }
@@ -171,9 +110,6 @@ namespace EncryptingAlgotitms.key_exchage_DH
         /// <param name="e"></param>
         private void ButKeyA_Click(object sender, EventArgs e)
         {
-
-            //Kec.GetPG(textP.Text, textG.Text);
-            //textKeyA.Text = Kec.Decrypt(textA.Text, AKey, Y);
             long AKey = Kec.Powermod(Y, Convert.ToInt32(textA.Text));
             textKeyA.Text = Convert.ToString(AKey);
         }
@@ -186,11 +122,8 @@ namespace EncryptingAlgotitms.key_exchage_DH
         /// <param name="e"></param>
         private void ButKeyB_Click(object sender, EventArgs e)
         {
-            //Kec.GetPG(textP.Text, textG.Text);
-            //textKeyB.Text = Kec.Decrypt(textB.Text, BKey, X);
             long bkey = Kec.Powermod(X, Convert.ToInt32(textB.Text));
             textKeyB.Text = Convert.ToString(bkey);
-
         }
 
         //========================================
@@ -201,11 +134,9 @@ namespace EncryptingAlgotitms.key_exchage_DH
         /// <param name="e"></param>
         private void ButGenX_Click(object sender, EventArgs e)
         {
-            Kec.GetPG(textP.Text, textG.Text);
-            textX.Text = Kec.Encrypt(textA.Text);
-             
-            //X = Powermod(g, Convert.ToInt32(textA.Text));
-            //textX.Text = Convert.ToString(X);
+            Kec.GetPG(textP.Text, textG.Text); 
+            X = Kec.Powermod(g, Convert.ToInt32(textA.Text));
+            textX.Text = Convert.ToString(X);
         }
 
         //========================================
@@ -217,9 +148,8 @@ namespace EncryptingAlgotitms.key_exchage_DH
         private void ButGenY_Click(object sender, EventArgs e)
         {
             Kec.GetPG(textP.Text, textG.Text);
-            textY.Text = Kec.Encrypt(textB.Text);
-            //Y = Powermod(g, Convert.ToInt32(textB.Text));
-            //textY.Text = Convert.ToString(Y);
+            Y = Kec.Powermod(g, Convert.ToInt32(textB.Text));
+            textY.Text = Convert.ToString(Y);
         }
 
         //========================================

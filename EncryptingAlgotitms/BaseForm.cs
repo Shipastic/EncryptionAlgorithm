@@ -22,7 +22,6 @@ namespace EncryptingAlgotitms
             InitializeComponent();
         }
 
-
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.Cascade);
@@ -35,14 +34,14 @@ namespace EncryptingAlgotitms
 
         private void PermutationCipherVigenerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PermutationCipherVigener Pcv = new PermutationCipherVigener
+            PermutationCipher Pcv = new PermutationCipher
             {
                 MdiParent = this
             };
             Pcv.Show();
 
         }
-        private void polyalphabeticCipherVigenerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PolyalphabeticCipherVigenerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PolyalphabeticCipherForm PolyalphaForm = new PolyalphabeticCipherForm
             {
@@ -51,7 +50,7 @@ namespace EncryptingAlgotitms
             PolyalphaForm.Show();
         }
 
-        private void streamCipherVigenerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void StreamCipherVigenerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StreamCipherForm Scf = new StreamCipherForm
             {
@@ -60,7 +59,7 @@ namespace EncryptingAlgotitms
             Scf.Show();
         }
 
-        private void keyExchangeDiffiHallmanToolStripMenuItem_Click(object sender, EventArgs e)
+        private void KeyExchangeDiffiHallmanToolStripMenuItem_Click(object sender, EventArgs e)
         {
             KeyExchangeForm Kef = new KeyExchangeForm
             {
@@ -69,13 +68,24 @@ namespace EncryptingAlgotitms
             Kef.Show();
         }
 
-        private void rSAToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RSAToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RSACipherForm rsaForm = new RSACipherForm
             {
                 MdiParent = this
             };
             rsaForm.Show();
+        }
+
+        private void InformationAboutAlgorithmVigenera1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          Help.ShowHelp(this, "MyHelp.chm");
+        }
+
+        private void AboutProgramToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutProgramForm Apf = new AboutProgramForm();
+            Apf.ShowDialog();
         }
     }
 }

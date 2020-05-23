@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace EncryptingAlgotitms.permutation_cipher
 {
-    public partial class PermutationCipherVigener : Form
+    public partial class PermutationCipher : Form
     {
         PermutationCipherClass permutationCipherClass = new PermutationCipherClass();
 
-        public PermutationCipherVigener()
+        public PermutationCipher()
         {
             InitializeComponent();
         }

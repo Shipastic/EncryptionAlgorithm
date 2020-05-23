@@ -18,7 +18,6 @@ C:\Users\Gena\source\repos\EncryptionAlgorithm\EncryptingAlgotitms\bin\Debug\Enc
 C:\Users\Gena\source\repos\EncryptionAlgorithm\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.csprojAssemblyReference.cache
 C:\Users\Gena\source\repos\EncryptionAlgorithm\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.BaseForm.resources
 C:\Users\Gena\source\repos\EncryptionAlgorithm\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.key_exchage_DH.KeyExchangeForm.resources
-C:\Users\Gena\source\repos\EncryptionAlgorithm\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.permutation_cipher.PermutationCipherVigener.resources
 C:\Users\Gena\source\repos\EncryptionAlgorithm\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.polyalphabetic_cipher.PolyalphabeticCipherForm.resources
 C:\Users\Gena\source\repos\EncryptionAlgorithm\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.Properties.Resources.resources
 C:\Users\Gena\source\repos\EncryptionAlgorithm\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.rsa.RSACipherForm.resources
@@ -27,3 +26,5 @@ C:\Users\Gena\source\repos\EncryptionAlgorithm\EncryptingAlgotitms\obj\Debug\Enc
 C:\Users\Gena\source\repos\EncryptionAlgorithm\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.csproj.CoreCompileInputs.cache
 C:\Users\Gena\source\repos\EncryptionAlgorithm\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.exe
 C:\Users\Gena\source\repos\EncryptionAlgorithm\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.pdb
+C:\Users\Gena\source\repos\EncryptionAlgorithm\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.permutation_cipher.PermutationCipher.resources
+C:\Users\Gena\source\repos\EncryptionAlgorithm\EncryptingAlgotitms\obj\Debug\EncryptingAlgotitms.AboutProgramForm.resources

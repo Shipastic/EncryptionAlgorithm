@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace EncryptingAlgotitms
 {
@@ -26,11 +21,6 @@ namespace EncryptingAlgotitms
 
         public string DecryptedMessage { get => decryptedMessage;  set => decryptedMessage = value; }
 
-        public virtual string Encrypt(string str1) //Метод для зашифровки сообщения
-        {
-            return "Виртуальный метод Шифрования базового класса";
-        }
-
         public virtual void Encrypt(string str1, string str2, DataGridView gridView) { }//Метод для зашифровки сообщения
   
         public virtual string Encrypt(int num1, int num2, DataGridView gridView) //Метод для зашифровки сообщения
@@ -43,11 +33,6 @@ namespace EncryptingAlgotitms
         }
     
         public virtual string Encrypt(int num1, string message, string Keymessage, DataGridView gridView1, DataGridView gridView2)//Метод для зашифровки сообщения
-        {
-            return "Виртуальный метод Шифрования базового класса";
-        }
-
-        public virtual string Decrypt(string str1, long number, long number2) //Метод для зашифровки сообщения
         {
             return "Виртуальный метод Шифрования базового класса";
         }

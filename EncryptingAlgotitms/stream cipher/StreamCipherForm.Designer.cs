@@ -28,35 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StreamCipherForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textMessageT = new System.Windows.Forms.TextBox();
-            this.textKeyViginT = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.buttonShifrT = new System.Windows.Forms.Button();
             this.gridV1 = new System.Windows.Forms.DataGridView();
+            this.buttonShifrT = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textKeyViginT = new System.Windows.Forms.TextBox();
+            this.textMessageT = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.gridV2 = new System.Windows.Forms.DataGridView();
             this.buttonDeshifrT = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textGetShifrT = new System.Windows.Forms.TextBox();
             this.textGetKeyT = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textGetShifrT = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.gridKey = new System.Windows.Forms.DataGridView();
+            this.textDeShifrT = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textDeShifrT = new System.Windows.Forms.TextBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridV1)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridV2)).BeginInit();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridKey)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.gridV1);
             this.panel1.Controls.Add(this.buttonShifrT);
             this.panel1.Controls.Add(this.label2);
@@ -65,56 +70,28 @@
             this.panel1.Controls.Add(this.textMessageT);
             this.panel1.Location = new System.Drawing.Point(26, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1182, 165);
+            this.panel1.Size = new System.Drawing.Size(1177, 165);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // gridV1
             // 
-            this.panel2.Controls.Add(this.gridV2);
-            this.panel2.Controls.Add(this.buttonDeshifrT);
-            this.panel2.Controls.Add(this.textGetKeyT);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textGetShifrT);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(26, 193);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1182, 164);
-            this.panel2.TabIndex = 1;
+            this.gridV1.AllowUserToAddRows = false;
+            this.gridV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridV1.Location = new System.Drawing.Point(3, 51);
+            this.gridV1.Name = "gridV1";
+            this.gridV1.ReadOnly = true;
+            this.gridV1.Size = new System.Drawing.Size(1154, 102);
+            this.gridV1.TabIndex = 5;
             // 
-            // panel3
+            // buttonShifrT
             // 
-            this.panel3.Controls.Add(this.gridKey);
-            this.panel3.Controls.Add(this.textDeShifrT);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(26, 363);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1182, 433);
-            this.panel3.TabIndex = 1;
-            // 
-            // textMessageT
-            // 
-            this.textMessageT.Location = new System.Drawing.Point(179, 20);
-            this.textMessageT.Name = "textMessageT";
-            this.textMessageT.Size = new System.Drawing.Size(518, 20);
-            this.textMessageT.TabIndex = 0;
-            // 
-            // textKeyViginT
-            // 
-            this.textKeyViginT.Location = new System.Drawing.Point(759, 21);
-            this.textKeyViginT.Name = "textKeyViginT";
-            this.textKeyViginT.Size = new System.Drawing.Size(283, 20);
-            this.textKeyViginT.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Исходное сообщение";
+            this.buttonShifrT.Location = new System.Drawing.Point(1048, 13);
+            this.buttonShifrT.Name = "buttonShifrT";
+            this.buttonShifrT.Size = new System.Drawing.Size(109, 34);
+            this.buttonShifrT.TabIndex = 4;
+            this.buttonShifrT.Text = "Шифровать";
+            this.buttonShifrT.UseVisualStyleBackColor = true;
+            this.buttonShifrT.Click += new System.EventHandler(this.ButtonShifrT_Click);
             // 
             // label2
             // 
@@ -126,25 +103,43 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Ключ";
             // 
-            // buttonShifrT
+            // label1
             // 
-            this.buttonShifrT.Location = new System.Drawing.Point(1048, 13);
-            this.buttonShifrT.Name = "buttonShifrT";
-            this.buttonShifrT.Size = new System.Drawing.Size(104, 34);
-            this.buttonShifrT.TabIndex = 4;
-            this.buttonShifrT.Text = "Шифровать";
-            this.buttonShifrT.UseVisualStyleBackColor = true;
-            this.buttonShifrT.Click += new System.EventHandler(this.ButtonShifrT_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Исходное сообщение";
             // 
-            // gridV1
+            // textKeyViginT
             // 
-            this.gridV1.AllowUserToAddRows = false;
-            this.gridV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridV1.Location = new System.Drawing.Point(3, 51);
-            this.gridV1.Name = "gridV1";
-            this.gridV1.ReadOnly = true;
-            this.gridV1.Size = new System.Drawing.Size(1154, 102);
-            this.gridV1.TabIndex = 5;
+            this.textKeyViginT.Location = new System.Drawing.Point(759, 21);
+            this.textKeyViginT.Name = "textKeyViginT";
+            this.textKeyViginT.Size = new System.Drawing.Size(283, 20);
+            this.textKeyViginT.TabIndex = 1;
+            // 
+            // textMessageT
+            // 
+            this.textMessageT.Location = new System.Drawing.Point(179, 20);
+            this.textMessageT.Name = "textMessageT";
+            this.textMessageT.Size = new System.Drawing.Size(518, 20);
+            this.textMessageT.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.gridV2);
+            this.panel2.Controls.Add(this.buttonDeshifrT);
+            this.panel2.Controls.Add(this.textGetKeyT);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.textGetShifrT);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(26, 193);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1177, 164);
+            this.panel2.TabIndex = 1;
             // 
             // gridV2
             // 
@@ -160,11 +155,18 @@
             // 
             this.buttonDeshifrT.Location = new System.Drawing.Point(1048, 14);
             this.buttonDeshifrT.Name = "buttonDeshifrT";
-            this.buttonDeshifrT.Size = new System.Drawing.Size(104, 32);
+            this.buttonDeshifrT.Size = new System.Drawing.Size(109, 32);
             this.buttonDeshifrT.TabIndex = 10;
             this.buttonDeshifrT.Text = "Дешифровать";
             this.buttonDeshifrT.UseVisualStyleBackColor = true;
             this.buttonDeshifrT.Click += new System.EventHandler(this.ButtonDeShifrT_Click);
+            // 
+            // textGetKeyT
+            // 
+            this.textGetKeyT.Location = new System.Drawing.Point(759, 21);
+            this.textGetKeyT.Name = "textGetKeyT";
+            this.textGetKeyT.Size = new System.Drawing.Size(283, 20);
+            this.textGetKeyT.TabIndex = 6;
             // 
             // label3
             // 
@@ -176,6 +178,13 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Зашифрованное сообщение";
             // 
+            // textGetShifrT
+            // 
+            this.textGetShifrT.Location = new System.Drawing.Point(235, 21);
+            this.textGetShifrT.Name = "textGetShifrT";
+            this.textGetShifrT.Size = new System.Drawing.Size(462, 20);
+            this.textGetShifrT.TabIndex = 7;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -186,19 +195,17 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Ключ";
             // 
-            // textGetShifrT
+            // panel3
             // 
-            this.textGetShifrT.Location = new System.Drawing.Point(235, 21);
-            this.textGetShifrT.Name = "textGetShifrT";
-            this.textGetShifrT.Size = new System.Drawing.Size(462, 20);
-            this.textGetShifrT.TabIndex = 7;
-            // 
-            // textGetKeyT
-            // 
-            this.textGetKeyT.Location = new System.Drawing.Point(759, 21);
-            this.textGetKeyT.Name = "textGetKeyT";
-            this.textGetKeyT.Size = new System.Drawing.Size(283, 20);
-            this.textGetKeyT.TabIndex = 6;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.gridKey);
+            this.panel3.Controls.Add(this.textDeShifrT);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Location = new System.Drawing.Point(26, 363);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1177, 433);
+            this.panel3.TabIndex = 1;
             // 
             // gridKey
             // 
@@ -207,8 +214,15 @@
             this.gridKey.Location = new System.Drawing.Point(3, 67);
             this.gridKey.Name = "gridKey";
             this.gridKey.ReadOnly = true;
-            this.gridKey.Size = new System.Drawing.Size(1174, 352);
+            this.gridKey.Size = new System.Drawing.Size(1154, 352);
             this.gridKey.TabIndex = 17;
+            // 
+            // textDeShifrT
+            // 
+            this.textDeShifrT.Location = new System.Drawing.Point(321, 6);
+            this.textDeShifrT.Name = "textDeShifrT";
+            this.textDeShifrT.Size = new System.Drawing.Size(738, 20);
+            this.textDeShifrT.TabIndex = 12;
             // 
             // label5
             // 
@@ -230,31 +244,39 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Таблица алфавита для шифрования/дешифрования по ключу";
             // 
-            // textDeShifrT
+            // imageList1
             // 
-            this.textDeShifrT.Location = new System.Drawing.Point(321, 6);
-            this.textDeShifrT.Name = "textDeShifrT";
-            this.textDeShifrT.Size = new System.Drawing.Size(738, 20);
-            this.textDeShifrT.TabIndex = 12;
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // imageList2
+            // 
+            this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // StreamCipherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1215, 808);
+            this.ClientSize = new System.Drawing.Size(1215, 737);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StreamCipherForm";
-            this.Text = "StreamCipherForm";
+            this.ShowIcon = false;
+            this.Text = "Потоковый алгоритм Виженера";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridV1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridV2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridV1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridV2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridKey)).EndInit();
             this.ResumeLayout(false);
 
@@ -281,5 +303,7 @@
         private System.Windows.Forms.TextBox textDeShifrT;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ImageList imageList2;
     }
 }

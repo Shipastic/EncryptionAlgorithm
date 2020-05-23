@@ -9,12 +9,8 @@ namespace EncryptingAlgotitms.key_exchage_DH
     class KeyExchangeClass : BaseClassEncrypting
     {
         static Random rand = new Random();
-        long maxPrime = 100;
-        long minPrime = 10;
         long p;
         long g;
-        long X;
-        long Y;
 
 //===========================================================================
         /// <summary>
@@ -27,18 +23,6 @@ namespace EncryptingAlgotitms.key_exchage_DH
             p = Convert.ToInt32(textfieldP);
 
             g = Convert.ToInt32(textfieldG);
-        }
-
-        public override string Encrypt(string textfield1)
-        {
-            //GetPG(string textfieldP, string textfieldG);
-
-            
-           long num = Powermod(g, Convert.ToInt32(textfield1));
-
-            string textfield2 = Convert.ToString(num);
-
-            return textfield2;
         }
 
 //===========================================================================
@@ -71,15 +55,24 @@ namespace EncryptingAlgotitms.key_exchage_DH
             return (a * b) % p;
         }
 
-
-        //public override string Decrypt(string textfield1, long num, long num2)
-        //{
-        //    num = Powermod(num2, Convert.ToInt32(textfield1));
-
-        //    string textfield2 = Convert.ToString(num);
-
-        //    return textfield2;
-        //}
-
+        //========================================
+        /// <summary>
+        /// Метод, проверяющий простое число или нет
+        /// </summary>
+        /// <param name="num">заданное число</param>
+        /// <returns></returns>
+        public bool IsPrime(long num)
+        {
+            if (num < 2) return false;
+            if (num == 2 || num == 3) return true;
+            if (num % 2 == 0) return false;
+            long max = Convert.ToInt64(Math.Sqrt(num));
+            for (int i = 3; i <= max; i += 2)
+            {
+                if (num % i == 0)
+                    return false;
+            }
+            return true;
+        }
     }
 }
