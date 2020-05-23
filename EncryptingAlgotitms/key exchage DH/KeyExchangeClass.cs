@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EncryptingAlgotitms.key_exchage_DH
 {
     class KeyExchangeClass : BaseClassEncrypting
     {
-        static Random rand = new Random();
+        static readonly Random rand = new Random();
         long p;
         long g;
 

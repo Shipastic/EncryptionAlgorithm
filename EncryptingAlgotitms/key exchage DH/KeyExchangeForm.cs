@@ -1,22 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EncryptingAlgotitms.key_exchage_DH
 {
     public partial class KeyExchangeForm : Form
     {
-        KeyExchangeClass Kec = new KeyExchangeClass();
+        readonly KeyExchangeClass Kec = new KeyExchangeClass();
 
-        static Random rand = new Random();
-        long maxPrime = 100;
-        long minPrime = 10;
+        static readonly Random rand = new Random();
+        readonly long maxPrime = 100;
+        readonly long minPrime = 10;
         long p;
         long g;
         long X;
@@ -164,7 +157,5 @@ namespace EncryptingAlgotitms.key_exchage_DH
             textP.Text = 43.ToString();
             textG.Text = 17.ToString();
         }
-
-
     }
 }

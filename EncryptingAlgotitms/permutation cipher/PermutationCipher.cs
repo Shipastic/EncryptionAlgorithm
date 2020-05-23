@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EncryptingAlgotitms.permutation_cipher
@@ -89,14 +82,12 @@ namespace EncryptingAlgotitms.permutation_cipher
 
             grid1.Rows.Clear();
 
-            try
-            {
-                AddColumns(grid1, permutationCipherClass.Key);
-            }
-            catch (Exception)
+            if (textKey.Text == string.Empty)
             {
                 MessageBox.Show("Введите ключ!!");
             }
+
+            AddColumns(grid1, permutationCipherClass.Key);
 
             int cols = textKey.TextLength;
 
@@ -174,7 +165,7 @@ namespace EncryptingAlgotitms.permutation_cipher
 
             int position = 0;
 
-            int rows = 0;
+            int rows;
 
             // Высчитываем количество строк
             if (textGetKey.TextLength != 0 && textGetShifr.TextLength != 0)

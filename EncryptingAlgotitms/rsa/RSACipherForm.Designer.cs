@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.butFindD = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
             this.butGenQ = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
             this.butGenP = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
             this.butGenE = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
             this.textD = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.textE = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.textF = new System.Windows.Forms.TextBox();
+            this.textP = new System.Windows.Forms.TextBox();
             this.textN = new System.Windows.Forms.TextBox();
             this.textQ = new System.Windows.Forms.TextBox();
-            this.textP = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textPublicMessage = new System.Windows.Forms.TextBox();
             this.butEncrypt = new System.Windows.Forms.Button();
@@ -117,6 +117,17 @@
             this.butFindD.UseVisualStyleBackColor = true;
             this.butFindD.Click += new System.EventHandler(this.Butfindd_click);
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label22.Location = new System.Drawing.Point(149, 6);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(31, 14);
+            this.label22.TabIndex = 16;
+            this.label22.Text = "p = ";
+            // 
             // butGenQ
             // 
             this.butGenQ.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -128,6 +139,17 @@
             this.butGenQ.Text = "Generate Q";
             this.butGenQ.UseVisualStyleBackColor = true;
             this.butGenQ.Click += new System.EventHandler(this.ButGenQ_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label21.Location = new System.Drawing.Point(149, 33);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(31, 14);
+            this.label21.TabIndex = 17;
+            this.label21.Text = "q = ";
             // 
             // butGenP
             // 
@@ -141,6 +163,17 @@
             this.butGenP.UseVisualStyleBackColor = true;
             this.butGenP.Click += new System.EventHandler(this.ButGenP_Click);
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label20.Location = new System.Drawing.Point(120, 67);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(60, 14);
+            this.label20.TabIndex = 18;
+            this.label20.Text = "n = p * q";
+            // 
             // butGenE
             // 
             this.butGenE.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -153,6 +186,17 @@
             this.butGenE.UseVisualStyleBackColor = true;
             this.butGenE.Click += new System.EventHandler(this.ButGenE_Click);
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.Location = new System.Drawing.Point(67, 97);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(113, 14);
+            this.label19.TabIndex = 19;
+            this.label19.Text = "φ(n) = (p-1)*(q-1)";
+            // 
             // textD
             // 
             this.textD.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -161,6 +205,17 @@
             this.textD.Name = "textD";
             this.textD.Size = new System.Drawing.Size(182, 22);
             this.textD.TabIndex = 27;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.Location = new System.Drawing.Point(51, 127);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(129, 14);
+            this.label18.TabIndex = 20;
+            this.label18.Text = "e = ,GCD(e,φ(n)) = 1";
             // 
             // textE
             // 
@@ -171,6 +226,17 @@
             this.textE.Size = new System.Drawing.Size(182, 22);
             this.textE.TabIndex = 26;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.Location = new System.Drawing.Point(67, 157);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(116, 14);
+            this.label17.TabIndex = 21;
+            this.label17.Text = "d = e^-1 mod φ(n)";
+            // 
             // textF
             // 
             this.textF.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -179,6 +245,15 @@
             this.textF.Name = "textF";
             this.textF.Size = new System.Drawing.Size(182, 22);
             this.textF.TabIndex = 25;
+            // 
+            // textP
+            // 
+            this.textP.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textP.Location = new System.Drawing.Point(188, 2);
+            this.textP.Margin = new System.Windows.Forms.Padding(4);
+            this.textP.Name = "textP";
+            this.textP.Size = new System.Drawing.Size(182, 22);
+            this.textP.TabIndex = 22;
             // 
             // textN
             // 
@@ -197,81 +272,6 @@
             this.textQ.Name = "textQ";
             this.textQ.Size = new System.Drawing.Size(182, 22);
             this.textQ.TabIndex = 23;
-            // 
-            // textP
-            // 
-            this.textP.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textP.Location = new System.Drawing.Point(188, 2);
-            this.textP.Margin = new System.Windows.Forms.Padding(4);
-            this.textP.Name = "textP";
-            this.textP.Size = new System.Drawing.Size(182, 22);
-            this.textP.TabIndex = 22;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(67, 157);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(116, 14);
-            this.label17.TabIndex = 21;
-            this.label17.Text = "d = e^-1 mod φ(n)";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(51, 127);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(129, 14);
-            this.label18.TabIndex = 20;
-            this.label18.Text = "e = ,GCD(e,φ(n)) = 1";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.Location = new System.Drawing.Point(67, 97);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(113, 14);
-            this.label19.TabIndex = 19;
-            this.label19.Text = "φ(n) = (p-1)*(q-1)";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label20.Location = new System.Drawing.Point(120, 67);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(60, 14);
-            this.label20.TabIndex = 18;
-            this.label20.Text = "n = p * q";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label21.Location = new System.Drawing.Point(149, 33);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(31, 14);
-            this.label21.TabIndex = 17;
-            this.label21.Text = "q = ";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label22.Location = new System.Drawing.Point(149, 6);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(31, 14);
-            this.label22.TabIndex = 16;
-            this.label22.Text = "p = ";
             // 
             // panel4
             // 
@@ -518,40 +518,40 @@
             // 
             // colLetter
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colLetter.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colLetter.DefaultCellStyle = dataGridViewCellStyle1;
             this.colLetter.HeaderText = "Letter";
             this.colLetter.Name = "colLetter";
             this.colLetter.ReadOnly = true;
             // 
             // colASCII
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colASCII.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colASCII.DefaultCellStyle = dataGridViewCellStyle2;
             this.colASCII.HeaderText = "ASCII";
             this.colASCII.Name = "colASCII";
             this.colASCII.ReadOnly = true;
             // 
             // colEncrypt
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colEncrypt.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colEncrypt.DefaultCellStyle = dataGridViewCellStyle3;
             this.colEncrypt.HeaderText = "Encrypt";
             this.colEncrypt.Name = "colEncrypt";
             this.colEncrypt.ReadOnly = true;
             // 
             // colDecrypt
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colDecrypt.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colDecrypt.DefaultCellStyle = dataGridViewCellStyle4;
             this.colDecrypt.HeaderText = "Decrypt";
             this.colDecrypt.Name = "colDecrypt";
             this.colDecrypt.ReadOnly = true;
             // 
             // colReLetter
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colReLetter.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colReLetter.DefaultCellStyle = dataGridViewCellStyle5;
             this.colReLetter.HeaderText = "ReLetter";
             this.colReLetter.Name = "colReLetter";
             this.colReLetter.ReadOnly = true;
@@ -566,7 +566,8 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Name = "RSACipherForm";
-            this.Text = "RSACipherForm";
+            this.ShowIcon = false;
+            this.Text = "RSA шифрование";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);

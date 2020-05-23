@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows.Forms;
 
 namespace EncryptingAlgotitms.stream_cipher
@@ -60,13 +56,10 @@ namespace EncryptingAlgotitms.stream_cipher
             string deshifr = null;
 
             string letter = null;
-
-            string key = null;
-
-            string quest = null;
-
             for (int col = 0; col < message; col++)
             {
+
+                string key;
                 //Используем сначала символы ключа для формирования строки в гриде
                 if (col < keyLength)
 
@@ -82,7 +75,7 @@ namespace EncryptingAlgotitms.stream_cipher
                 gridView[col, 0].Value = key;
 
                 //Помещаем в переменную тот символ. который собираемся дешифровать
-                quest = encryptMessage[col].ToString();
+                string quest = encryptMessage[col].ToString();
 
                 /*
                  * В цикле проходимся по строкам ключевого грида
@@ -110,5 +103,54 @@ namespace EncryptingAlgotitms.stream_cipher
         }
 
 //=========================================================================
+        /// <summary>
+        /// Метод для проверки входных данных
+        /// </summary>
+        /// <param name="MessageText">Исходное сообщение</param>
+        /// <param name="KeyMessage">Ключ</param>
+        /// <returns></returns>
+        public override string CheckDataError(string MessageText, string KeyMessage)
+        {
+            if (MessageText == string.Empty)
+            {
+                return "Введите сообщение для зашифровки!";
+            }
+            
+            if (KeyMessage == string.Empty)
+            {
+                return "Введите ключ!";
+            }
+
+            if (IsEqualsLetters(KeyMessage))
+            {
+                return "В ключе не должны повторяться символы!!!";
+            }
+
+           // проверка на символы, отличные от символов алфавита
+            foreach (var item in KeyMessage)
+            {
+                if (!abcT.Contains(item))
+                {
+                    return "Введены недопустимые символы\nДоступны только буквы русского алфавита";
+                }
+            }
+            return "";
+        }
+
+//=========================================================================
+        /// <summary>
+        /// Метод для проверки одинаковых символов в ключе
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public bool IsEqualsLetters(string text)
+        {
+            for (int i = 0; i < text.Length - 1; i++)
+            {
+                if (text.Substring(i + 1).IndexOf(text[i]) >= 0)
+                    return true;
+            }
+            return false;
+        }
     }
 }

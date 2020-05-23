@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textA = new System.Windows.Forms.TextBox();
-            this.textX = new System.Windows.Forms.TextBox();
-            this.textKeyA = new System.Windows.Forms.TextBox();
-            this.butGenerateA = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.butGenX = new System.Windows.Forms.Button();
             this.butKeyA = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.butGenerateA = new System.Windows.Forms.Button();
+            this.textKeyA = new System.Windows.Forms.TextBox();
+            this.textX = new System.Windows.Forms.TextBox();
+            this.textA = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.butGenY = new System.Windows.Forms.Button();
@@ -53,12 +53,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textP = new System.Windows.Forms.TextBox();
-            this.textG = new System.Windows.Forms.TextBox();
-            this.butP = new System.Windows.Forms.Button();
             this.butG = new System.Windows.Forms.Button();
+            this.butP = new System.Windows.Forms.Button();
+            this.textG = new System.Windows.Forms.TextBox();
+            this.textP = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -66,6 +66,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Chocolate;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.butGenX);
@@ -82,15 +83,86 @@
             this.panel1.Size = new System.Drawing.Size(393, 343);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // label4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Секретное число А =";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(148, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 20);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "АБОНЕНТ 1";
+            // 
+            // butGenX
+            // 
+            this.butGenX.BackColor = System.Drawing.SystemColors.MenuText;
+            this.butGenX.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butGenX.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.butGenX.Location = new System.Drawing.Point(183, 173);
+            this.butGenX.Name = "butGenX";
+            this.butGenX.Size = new System.Drawing.Size(184, 39);
+            this.butGenX.TabIndex = 7;
+            this.butGenX.Text = "Расчитать";
+            this.butGenX.UseVisualStyleBackColor = false;
+            this.butGenX.Click += new System.EventHandler(this.ButGenX_Click);
+            // 
+            // butKeyA
+            // 
+            this.butKeyA.BackColor = System.Drawing.SystemColors.MenuText;
+            this.butKeyA.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butKeyA.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.butKeyA.Location = new System.Drawing.Point(77, 278);
+            this.butKeyA.Name = "butKeyA";
+            this.butKeyA.Size = new System.Drawing.Size(290, 39);
+            this.butKeyA.TabIndex = 8;
+            this.butKeyA.Text = "Общий секретный ключ";
+            this.butKeyA.UseVisualStyleBackColor = false;
+            this.butKeyA.Click += new System.EventHandler(this.ButKeyA_Click);
+            // 
+            // butGenerateA
+            // 
+            this.butGenerateA.BackColor = System.Drawing.SystemColors.MenuText;
+            this.butGenerateA.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butGenerateA.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.butGenerateA.Location = new System.Drawing.Point(183, 85);
+            this.butGenerateA.Name = "butGenerateA";
+            this.butGenerateA.Size = new System.Drawing.Size(184, 41);
+            this.butGenerateA.TabIndex = 6;
+            this.butGenerateA.Text = "Сгенерировать";
+            this.butGenerateA.UseVisualStyleBackColor = false;
+            this.butGenerateA.Click += new System.EventHandler(this.ButGenerateA_Click);
+            // 
+            // textKeyA
+            // 
+            this.textKeyA.Location = new System.Drawing.Point(183, 238);
+            this.textKeyA.Name = "textKeyA";
+            this.textKeyA.Size = new System.Drawing.Size(184, 20);
+            this.textKeyA.TabIndex = 5;
+            // 
+            // textX
+            // 
+            this.textX.Location = new System.Drawing.Point(183, 147);
+            this.textX.Name = "textX";
+            this.textX.Size = new System.Drawing.Size(184, 20);
+            this.textX.TabIndex = 4;
+            // 
+            // textA
+            // 
+            this.textA.Location = new System.Drawing.Point(183, 59);
+            this.textA.Name = "textA";
+            this.textA.Size = new System.Drawing.Size(184, 20);
+            this.textA.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(73, 238);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Общий ключ";
             // 
             // label2
             // 
@@ -102,82 +174,20 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Число для отправки =";
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(73, 238);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Общий ключ";
-            // 
-            // textA
-            // 
-            this.textA.Location = new System.Drawing.Point(183, 59);
-            this.textA.Name = "textA";
-            this.textA.Size = new System.Drawing.Size(184, 20);
-            this.textA.TabIndex = 3;
-            // 
-            // textX
-            // 
-            this.textX.Location = new System.Drawing.Point(183, 147);
-            this.textX.Name = "textX";
-            this.textX.Size = new System.Drawing.Size(184, 20);
-            this.textX.TabIndex = 4;
-            // 
-            // textKeyA
-            // 
-            this.textKeyA.Location = new System.Drawing.Point(183, 238);
-            this.textKeyA.Name = "textKeyA";
-            this.textKeyA.Size = new System.Drawing.Size(184, 20);
-            this.textKeyA.TabIndex = 5;
-            // 
-            // butGenerateA
-            // 
-            this.butGenerateA.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butGenerateA.Location = new System.Drawing.Point(183, 85);
-            this.butGenerateA.Name = "butGenerateA";
-            this.butGenerateA.Size = new System.Drawing.Size(184, 41);
-            this.butGenerateA.TabIndex = 6;
-            this.butGenerateA.Text = "Сгенерировать";
-            this.butGenerateA.UseVisualStyleBackColor = true;
-            this.butGenerateA.Click += new System.EventHandler(this.ButGenerateA_Click);
-            // 
-            // butGenX
-            // 
-            this.butGenX.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butGenX.Location = new System.Drawing.Point(183, 173);
-            this.butGenX.Name = "butGenX";
-            this.butGenX.Size = new System.Drawing.Size(184, 39);
-            this.butGenX.TabIndex = 7;
-            this.butGenX.Text = "Расчитать";
-            this.butGenX.UseVisualStyleBackColor = true;
-            this.butGenX.Click += new System.EventHandler(this.ButGenX_Click);
-            // 
-            // butKeyA
-            // 
-            this.butKeyA.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butKeyA.Location = new System.Drawing.Point(77, 278);
-            this.butKeyA.Name = "butKeyA";
-            this.butKeyA.Size = new System.Drawing.Size(290, 39);
-            this.butKeyA.TabIndex = 8;
-            this.butKeyA.Text = "Общий секретный ключ";
-            this.butKeyA.UseVisualStyleBackColor = true;
-            this.butKeyA.Click += new System.EventHandler(this.ButKeyA_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(148, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 20);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "АБОНЕНТ 1";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(167, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Секретное число А =";
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.butGenY);
@@ -206,35 +216,41 @@
             // 
             // butGenY
             // 
+            this.butGenY.BackColor = System.Drawing.SystemColors.MenuText;
             this.butGenY.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butGenY.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.butGenY.Location = new System.Drawing.Point(183, 173);
             this.butGenY.Name = "butGenY";
             this.butGenY.Size = new System.Drawing.Size(184, 39);
             this.butGenY.TabIndex = 7;
             this.butGenY.Text = "Расчитать";
-            this.butGenY.UseVisualStyleBackColor = true;
+            this.butGenY.UseVisualStyleBackColor = false;
             this.butGenY.Click += new System.EventHandler(this.ButGenY_Click);
             // 
             // butKeyB
             // 
+            this.butKeyB.BackColor = System.Drawing.SystemColors.MenuText;
             this.butKeyB.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butKeyB.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.butKeyB.Location = new System.Drawing.Point(77, 278);
             this.butKeyB.Name = "butKeyB";
             this.butKeyB.Size = new System.Drawing.Size(290, 39);
             this.butKeyB.TabIndex = 8;
             this.butKeyB.Text = "Общий секретный ключ";
-            this.butKeyB.UseVisualStyleBackColor = true;
+            this.butKeyB.UseVisualStyleBackColor = false;
             this.butKeyB.Click += new System.EventHandler(this.ButKeyB_Click);
             // 
             // butGenerateB
             // 
+            this.butGenerateB.BackColor = System.Drawing.SystemColors.MenuText;
             this.butGenerateB.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butGenerateB.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.butGenerateB.Location = new System.Drawing.Point(183, 85);
             this.butGenerateB.Name = "butGenerateB";
             this.butGenerateB.Size = new System.Drawing.Size(184, 41);
             this.butGenerateB.TabIndex = 6;
             this.butGenerateB.Text = "Сгенерировать";
-            this.butGenerateB.UseVisualStyleBackColor = true;
+            this.butGenerateB.UseVisualStyleBackColor = false;
             this.butGenerateB.Click += new System.EventHandler(this.ButGenetateB_Click);
             // 
             // textKeyB
@@ -290,6 +306,9 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.butG);
             this.panel3.Controls.Add(this.butP);
@@ -302,15 +321,45 @@
             this.panel3.Size = new System.Drawing.Size(801, 100);
             this.panel3.TabIndex = 11;
             // 
-            // label9
+            // butG
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(155, 16);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(148, 20);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Простое число P =";
+            this.butG.BackColor = System.Drawing.SystemColors.MenuText;
+            this.butG.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butG.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.butG.Location = new System.Drawing.Point(510, 51);
+            this.butG.Name = "butG";
+            this.butG.Size = new System.Drawing.Size(146, 38);
+            this.butG.TabIndex = 5;
+            this.butG.Text = "Случайное число";
+            this.butG.UseVisualStyleBackColor = false;
+            this.butG.Click += new System.EventHandler(this.ButG_Click);
+            // 
+            // butP
+            // 
+            this.butP.BackColor = System.Drawing.SystemColors.MenuText;
+            this.butP.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butP.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.butP.Location = new System.Drawing.Point(510, 7);
+            this.butP.Name = "butP";
+            this.butP.Size = new System.Drawing.Size(146, 38);
+            this.butP.TabIndex = 4;
+            this.butP.Text = "Случайное число";
+            this.butP.UseVisualStyleBackColor = false;
+            this.butP.Click += new System.EventHandler(this.ButP_Click);
+            // 
+            // textG
+            // 
+            this.textG.Location = new System.Drawing.Point(331, 61);
+            this.textG.Name = "textG";
+            this.textG.Size = new System.Drawing.Size(140, 20);
+            this.textG.TabIndex = 3;
+            // 
+            // textP
+            // 
+            this.textP.Location = new System.Drawing.Point(331, 17);
+            this.textP.Name = "textP";
+            this.textP.Size = new System.Drawing.Size(140, 20);
+            this.textP.TabIndex = 2;
             // 
             // label10
             // 
@@ -322,41 +371,15 @@
             this.label10.TabIndex = 1;
             this.label10.Text = "Общее основание G =";
             // 
-            // textP
+            // label9
             // 
-            this.textP.Location = new System.Drawing.Point(331, 17);
-            this.textP.Name = "textP";
-            this.textP.Size = new System.Drawing.Size(140, 20);
-            this.textP.TabIndex = 2;
-            // 
-            // textG
-            // 
-            this.textG.Location = new System.Drawing.Point(331, 61);
-            this.textG.Name = "textG";
-            this.textG.Size = new System.Drawing.Size(140, 20);
-            this.textG.TabIndex = 3;
-            // 
-            // butP
-            // 
-            this.butP.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butP.Location = new System.Drawing.Point(510, 7);
-            this.butP.Name = "butP";
-            this.butP.Size = new System.Drawing.Size(146, 38);
-            this.butP.TabIndex = 4;
-            this.butP.Text = "Случайное число";
-            this.butP.UseVisualStyleBackColor = true;
-            this.butP.Click += new System.EventHandler(this.ButP_Click);
-            // 
-            // butG
-            // 
-            this.butG.Font = new System.Drawing.Font("Tempus Sans ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butG.Location = new System.Drawing.Point(510, 51);
-            this.butG.Name = "butG";
-            this.butG.Size = new System.Drawing.Size(146, 38);
-            this.butG.TabIndex = 5;
-            this.butG.Text = "Случайное число";
-            this.butG.UseVisualStyleBackColor = true;
-            this.butG.Click += new System.EventHandler(this.ButG_Click);
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tempus Sans ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(155, 16);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(148, 20);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Простое число P =";
             // 
             // KeyExchangeForm
             // 
@@ -369,7 +392,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "KeyExchangeForm";
             this.ShowIcon = false;
-            this.Text = "KeyExchangeForm";
+            this.Text = "Ключевой обмен Диффи-Хеллмана";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

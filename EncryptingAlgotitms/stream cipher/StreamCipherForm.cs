@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EncryptingAlgotitms.stream_cipher
@@ -30,39 +23,21 @@ namespace EncryptingAlgotitms.stream_cipher
         /// <param name="e"></param>
         private void ButtonShifrT_Click(object sender, EventArgs e)
         {
-            if (textMessageT.TextLength == 0)
-            { MessageBox.Show("Введите сообщение для зашифровки"); return; }
+            cipherClass.OriginalMessage = textMessageT.Text;
 
-            if (textKeyViginT.TextLength == 0)
-            { MessageBox.Show("Введите ключ"); return; }
+            cipherClass.Key = textKeyViginT.Text;
+
+            string err = cipherClass.CheckDataError(cipherClass.OriginalMessage, cipherClass.Key);
+
+            if (err != "")
+            {
+                MessageBox.Show(err);
+                return;
+            }
 
             textGetKeyT.Text = textKeyViginT.Text;
 
-            //=============================Вынести эти проверки в отдельный метод==============================
-
-            // проверка на символы, отличные от символов алфавита
-            foreach (var item in textKeyViginT.Text)
-            {
-                if (!abcT.Contains(item))
-                {
-                    MessageBox.Show("Введены недопустимые символы\nДоступны только буквы русского алфавита");
-
-                    return;
-                }
-            }
-
-            // проверка на символы, отличные от символов алфавита
-            foreach (var item in textMessageT.Text)
-            {
-                if (!abcT.Contains(item))
-                {
-                    MessageBox.Show("Введены недопустимые символы\nДоступны только буквы русского алфавита");
-
-                    return;
-                }
-            }
-
-            FillKeyTableT(textKeyViginT.Text);
+            FillKeyTableT();
 
             FillGridT();
         }
@@ -72,7 +47,7 @@ namespace EncryptingAlgotitms.stream_cipher
         /// Метод для заполнения ключевого грида
         /// </summary>
         /// <param name="key"></param>
-        void FillKeyTableT(string key)
+        void FillKeyTableT()
         {
             gridKey.Columns.Clear();
 
@@ -139,22 +114,6 @@ namespace EncryptingAlgotitms.stream_cipher
 
             cipherClass.Encrypt(textMessageT.TextLength, textMessageT.Text, keyMessage, gridKey, gridV1);
 
-            //string shifr = null;
-
-            //for (int col = 0; col < textMessageT.TextLength; col++)
-            //{
-            //    string letter;
-
-            //    if (abcT.Contains(textMessageT.Text[col]))
-            //        letter = gridKey[abcT.IndexOf(textMessageT.Text[col]),
-            //                         abcT.IndexOf(keyMessage[col])].Value.ToString();
-            //    else
-            //        letter = textMessageT.Text[col].ToString();
-
-            //    gridV1[col, 1].Value = letter;
-
-            //    shifr += letter;
-            //}
 
             textGetShifrT.Text = cipherClass.Encrypt(textMessageT.TextLength, textMessageT.Text, keyMessage, gridKey, gridV1);
         }
@@ -184,7 +143,7 @@ namespace EncryptingAlgotitms.stream_cipher
             if (textGetKeyT.Text == null)
             { MessageBox.Show("Введите ключ"); return; }
 
-            FillKeyTableT(textGetKeyT.Text);
+            FillKeyTableT();
 
             FillGrid2T();
         }
@@ -215,57 +174,7 @@ namespace EncryptingAlgotitms.stream_cipher
                 gridV2.Rows[1].HeaderCell.Value = "Текст: ";
 
                 cipherClass.Decrypt(textMessageT.TextLength, textKeyViginT.TextLength, textKeyViginT.Text, textGetShifrT.Text, gridKey, gridV2);
-
-                //string deshifr = null;
-
-                //string letter = null;
-
-                //string key = null;
-
-                //string quest = null;
-
-                //for (int col = 0; col < textMessageT.TextLength; col++)
-                //{
-                //    //Используем сначала символы ключа для формирования строки в гриде
-                //    if (col < textKeyViginT.TextLength)
-
-                //        // И помещаем их в переменную key
-                //        key = textKeyViginT.Text[col].ToString();
-
-                //    else
-
-                //        // В противном случае,помещаем в переменную key те символы, которые зашифровали в первом гриде, из второй строки
-                //        key = gridV2[col - textKeyViginT.Text.Length, 1].Value.ToString();
-
-                //    //Добавляем в грид в первую строку полученные символы
-                //    gridV2[col, 0].Value = key;
-
-                //    //Помещаем в переменную тот символ. который собираемся дешифровать
-                //    quest = textGetShifrT.Text[col].ToString();
-
-                //    /*
-                //     * В цикле проходимся по строкам ключевого грида
-                //     * из первой строки грида получаем текущий символ
-                //     * в ключевой таблице по полученному символу  выбираем столбец
-                //     * в этом столбце находим символ, равный символу во второй строке грида
-                //     * и записываем его в переменную letter
-                //     */
-                //    for (int row = 0; row < abcT.Length; row++)
-                //    {
-                //        if (gridKey[abcT.IndexOf(key), row].Value.ToString() == quest)
-                //        {
-                //            letter = abcT[row].ToString();
-
-                //            break;
-                //        }
-                //    }
-                //    //Добавляем расшифрованные символы во вторую строку грида
-                //    gridV2[col, 1].Value = letter;
-
-                //    //Формируем строку с расшифрованным сообщением
-                //    deshifr += letter;
-                //}
-
+           
                 //Помещаем расшифрованное сообщение в текстовое поле
                 textDeShifrT.Text = cipherClass.Decrypt(textMessageT.TextLength, textKeyViginT.TextLength, textKeyViginT.Text, textGetShifrT.Text, gridKey, gridV2);
             }

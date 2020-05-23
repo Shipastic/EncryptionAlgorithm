@@ -61,6 +61,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.gridV1);
             this.panel1.Controls.Add(this.buttonShifrT);
@@ -76,6 +77,7 @@
             // gridV1
             // 
             this.gridV1.AllowUserToAddRows = false;
+            this.gridV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridV1.Location = new System.Drawing.Point(3, 51);
             this.gridV1.Name = "gridV1";
@@ -85,12 +87,15 @@
             // 
             // buttonShifrT
             // 
+            this.buttonShifrT.BackColor = System.Drawing.Color.Teal;
+            this.buttonShifrT.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonShifrT.ForeColor = System.Drawing.Color.Snow;
             this.buttonShifrT.Location = new System.Drawing.Point(1048, 13);
             this.buttonShifrT.Name = "buttonShifrT";
             this.buttonShifrT.Size = new System.Drawing.Size(109, 34);
             this.buttonShifrT.TabIndex = 4;
             this.buttonShifrT.Text = "Шифровать";
-            this.buttonShifrT.UseVisualStyleBackColor = true;
+            this.buttonShifrT.UseVisualStyleBackColor = false;
             this.buttonShifrT.Click += new System.EventHandler(this.ButtonShifrT_Click);
             // 
             // label2
@@ -129,6 +134,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.gridV2);
             this.panel2.Controls.Add(this.buttonDeshifrT);
@@ -144,6 +150,7 @@
             // gridV2
             // 
             this.gridV2.AllowUserToAddRows = false;
+            this.gridV2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridV2.Location = new System.Drawing.Point(3, 53);
             this.gridV2.Name = "gridV2";
@@ -153,12 +160,15 @@
             // 
             // buttonDeshifrT
             // 
+            this.buttonDeshifrT.BackColor = System.Drawing.Color.Teal;
+            this.buttonDeshifrT.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDeshifrT.ForeColor = System.Drawing.Color.Snow;
             this.buttonDeshifrT.Location = new System.Drawing.Point(1048, 14);
             this.buttonDeshifrT.Name = "buttonDeshifrT";
             this.buttonDeshifrT.Size = new System.Drawing.Size(109, 32);
             this.buttonDeshifrT.TabIndex = 10;
             this.buttonDeshifrT.Text = "Дешифровать";
-            this.buttonDeshifrT.UseVisualStyleBackColor = true;
+            this.buttonDeshifrT.UseVisualStyleBackColor = false;
             this.buttonDeshifrT.Click += new System.EventHandler(this.ButtonDeShifrT_Click);
             // 
             // textGetKeyT
@@ -197,6 +207,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.gridKey);
             this.panel3.Controls.Add(this.textDeShifrT);
@@ -210,6 +221,7 @@
             // gridKey
             // 
             this.gridKey.AllowUserToAddRows = false;
+            this.gridKey.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridKey.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridKey.Location = new System.Drawing.Point(3, 67);
             this.gridKey.Name = "gridKey";
@@ -260,15 +272,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1215, 737);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StreamCipherForm";
             this.ShowIcon = false;
-            this.Text = "Потоковый алгоритм Виженера";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Подстановочный шифр Виженера";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridV1)).EndInit();

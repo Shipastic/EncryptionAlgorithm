@@ -43,8 +43,8 @@
             this.verticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informationAboutAlgorithmVigenera1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.aboutProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,7 +93,7 @@
             // 
             this.polyalphabeticCipherVigenerToolStripMenuItem.Name = "polyalphabeticCipherVigenerToolStripMenuItem";
             this.polyalphabeticCipherVigenerToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
-            this.polyalphabeticCipherVigenerToolStripMenuItem.Text = "Полиалфавитный шифр Виженера";
+            this.polyalphabeticCipherVigenerToolStripMenuItem.Text = "Полиалфавитный шифр";
             this.polyalphabeticCipherVigenerToolStripMenuItem.Click += new System.EventHandler(this.PolyalphabeticCipherVigenerToolStripMenuItem_Click);
             // 
             // streamCipherVigenerToolStripMenuItem
