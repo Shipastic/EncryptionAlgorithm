@@ -100,7 +100,7 @@
             // 
             this.streamCipherVigenerToolStripMenuItem.Name = "streamCipherVigenerToolStripMenuItem";
             this.streamCipherVigenerToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
-            this.streamCipherVigenerToolStripMenuItem.Text = "Потоковый шифр Виженера";
+            this.streamCipherVigenerToolStripMenuItem.Text = "Шифр Виженера";
             this.streamCipherVigenerToolStripMenuItem.Click += new System.EventHandler(this.StreamCipherVigenerToolStripMenuItem_Click);
             // 
             // keyExchangeDiffiHallmanToolStripMenuItem

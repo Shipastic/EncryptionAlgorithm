@@ -26,16 +26,16 @@ namespace EncryptingAlgotitms.polyalphabetic_cipher
 
             polyalphabetic.Key = textKeyVigin.Text;
 
-            string err = polyalphabetic.CheckDataError(polyalphabetic.OriginalMessage, polyalphabetic.Key);
+            string err = polyalphabetic.CheckDataError();
             if (err != "")
             {
                 MessageBox.Show(err);
                 return;
             }
 
-            textGetKey.Text = textKeyVigin.Text;
+            textGetKey.Text = polyalphabetic.Key;
 
-            FillKeyTable(textKeyVigin.Text);
+            FillKeyTable(polyalphabetic.Key);
 
             FillGrid();
         }
@@ -91,7 +91,7 @@ namespace EncryptingAlgotitms.polyalphabetic_cipher
              * Заполняем грид символами из сообщения
              * Количество столбцов равно количеству букв в сообщении
              */
-            AddColumns(gridV1, textMessage.Text);
+            AddColumns(gridV1, polyalphabetic.OriginalMessage);
 
             /*
              * Заполняем строку грида символами из ключа 
@@ -101,10 +101,10 @@ namespace EncryptingAlgotitms.polyalphabetic_cipher
 
             gridV1.Rows[0].HeaderCell.Value = "Ключ: "; //Создаем заголовочный столбец
 
-            for (int col = 0; col < textMessage.TextLength; col++)
+            for (int col = 0; col < polyalphabetic.OriginalMessage.Length; col++)
             {
                 //Номеру строки присваиваем 0, т.е. строка не будет меняться в цикле
-                gridV1[col, 0].Value = textKeyVigin.Text[col % textKeyVigin.TextLength].ToString();
+                gridV1[col, 0].Value = polyalphabetic.Key[col % polyalphabetic.Key.Length].ToString();
             }
 
             // Добавляем строку, в которую будет записываться шифр
@@ -112,11 +112,11 @@ namespace EncryptingAlgotitms.polyalphabetic_cipher
 
             gridV1.Rows[1].HeaderCell.Value = "Шифр: ";
 
-            polyalphabetic.Encrypt(textMessage.TextLength, textKeyVigin.TextLength, gridKey, gridV1, textMessage.Text);
+            polyalphabetic.Encrypt(polyalphabetic.OriginalMessage.Length, polyalphabetic.Key.Length, gridKey, gridV1, polyalphabetic.OriginalMessage);
 
             // Помещаем шифр в текстовое поле
-            textGetShifr.Text = polyalphabetic.Encrypt(textMessage.TextLength, 
-                                                       textKeyVigin.TextLength, gridKey, gridV1, textMessage.Text);
+            textGetShifr.Text = polyalphabetic.Encrypt(polyalphabetic.OriginalMessage.Length,
+                                                       polyalphabetic.Key.Length, gridKey, gridV1, polyalphabetic.OriginalMessage);
         }
 
 //=========================================================================
@@ -127,7 +127,7 @@ namespace EncryptingAlgotitms.polyalphabetic_cipher
         /// <param name="e"></param>
         private void TextKey_TextChanged(object sender, EventArgs e)
         {
-            textKeyVigin.Text.ToUpper();
+            polyalphabetic.Key.ToUpper();
         }
 
 //=========================================================================
@@ -143,7 +143,7 @@ namespace EncryptingAlgotitms.polyalphabetic_cipher
             polyalphabetic.Key = textGetKey.Text;
 
 
-            string err = polyalphabetic.CheckDataError(polyalphabetic.CipherMessage, polyalphabetic.Key);
+            string err = polyalphabetic.CheckDataError();
             if (err != "")
             {
                 MessageBox.Show(err);
@@ -188,9 +188,9 @@ namespace EncryptingAlgotitms.polyalphabetic_cipher
 
                 gridV2.Rows[1].HeaderCell.Value = "Текст: ";
 
-                polyalphabetic.Decrypt(textMessage.TextLength, textGetKey.TextLength, gridKey, gridV2, textGetShifr.Text);     
+                polyalphabetic.Decrypt(polyalphabetic.OriginalMessage.Length, textGetKey.TextLength, gridKey, gridV2, textGetShifr.Text);     
 
-        textDeShifr.Text = polyalphabetic.Decrypt(textMessage.TextLength, textGetKey.TextLength, gridKey, gridV2, textGetShifr.Text);
+        textDeShifr.Text = polyalphabetic.Decrypt(polyalphabetic.OriginalMessage.Length, textGetKey.TextLength, gridKey, gridV2, textGetShifr.Text);
             }
             catch (Exception ex)
             {

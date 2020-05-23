@@ -2,7 +2,7 @@
 
 namespace EncryptingAlgotitms
 {
-      class BaseClassEncrypting
+      public class BaseClassEncrypting
     {
         public string originalMessage; //Исходный текст
 
@@ -13,13 +13,13 @@ namespace EncryptingAlgotitms
         public string decryptedMessage;//Расшифрованный текст
 
         //Создаем свойства для полей класса
-        public string OriginalMessage { get => originalMessage; set => originalMessage = value; }
+        public virtual string OriginalMessage { get => originalMessage; set => originalMessage = value; }
 
-        public string CipherMessage { get => cipherMessage;   set => cipherMessage = value; }
+        public virtual string CipherMessage { get => cipherMessage;   set => cipherMessage = value; }
 
-        public string Key { get => key; set => key = value; }
+        public virtual string Key { get => key; set => key = value; }
 
-        public string DecryptedMessage { get => decryptedMessage;  set => decryptedMessage = value; }
+        public virtual string DecryptedMessage { get => decryptedMessage;  set => decryptedMessage = value; }
 
         public virtual void Encrypt(string str1, string str2, DataGridView gridView) { }//Метод для зашифровки сообщения
   
@@ -53,7 +53,7 @@ namespace EncryptingAlgotitms
         {
             return "Виртуальный метод Дешифрования базового класса";
         }
-        public virtual string CheckDataError(string mess, string key) //Метод для проверки входных данных
+        public virtual string CheckDataError() //Метод для проверки входных данных
         {
             return "Виртуальный метод Дешифрования базового класса";
         }

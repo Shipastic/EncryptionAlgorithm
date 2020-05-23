@@ -27,7 +27,7 @@ namespace EncryptingAlgotitms.stream_cipher
 
             cipherClass.Key = textKeyViginT.Text;
 
-            string err = cipherClass.CheckDataError(cipherClass.OriginalMessage, cipherClass.Key);
+            string err = cipherClass.CheckDataError();
 
             if (err != "")
             {
@@ -35,7 +35,7 @@ namespace EncryptingAlgotitms.stream_cipher
                 return;
             }
 
-            textGetKeyT.Text = textKeyViginT.Text;
+            textGetKeyT.Text = cipherClass.Key;
 
             FillKeyTableT();
 
@@ -89,21 +89,21 @@ namespace EncryptingAlgotitms.stream_cipher
 
             gridV1.Rows.Clear();
 
-            for (int col = 0; col < textMessageT.TextLength; col++)
+            for (int col = 0; col < cipherClass.OriginalMessage.Length; col++)
             {
-                gridV1.Columns.Add("col_" + col, textMessageT.Text[col].ToString());
+                gridV1.Columns.Add("col_" + col, cipherClass.OriginalMessage[col].ToString());
 
                 gridV1.Columns[col].SortMode = DataGridViewColumnSortMode.NotSortable;
             }
 
             //Формируем строку с ключом в гриде
-            string keyMessage = textKeyViginT.Text + textMessageT.Text;
+            string keyMessage = cipherClass.Key + cipherClass.OriginalMessage;
 
             gridV1.Rows.Add();
 
 
             gridV1.Rows[0].HeaderCell.Value = "Ключ: ";
-            for (int col = 0; col < textMessageT.TextLength; col++)
+            for (int col = 0; col < cipherClass.OriginalMessage.Length; col++)
             {
                 gridV1[col, 0].Value = keyMessage[col % keyMessage.Length].ToString();
             }
@@ -112,10 +112,10 @@ namespace EncryptingAlgotitms.stream_cipher
 
             gridV1.Rows[1].HeaderCell.Value = "Шифр: ";
 
-            cipherClass.Encrypt(textMessageT.TextLength, textMessageT.Text, keyMessage, gridKey, gridV1);
+            cipherClass.Encrypt(cipherClass.OriginalMessage.Length, cipherClass.OriginalMessage, keyMessage, gridKey, gridV1);
 
 
-            textGetShifrT.Text = cipherClass.Encrypt(textMessageT.TextLength, textMessageT.Text, keyMessage, gridKey, gridV1);
+            textGetShifrT.Text = cipherClass.Encrypt(cipherClass.OriginalMessage.Length, cipherClass.OriginalMessage, keyMessage, gridKey, gridV1);
         }
 
         //=========================================================================
@@ -126,7 +126,7 @@ namespace EncryptingAlgotitms.stream_cipher
         /// <param name="e"></param>
         private void TextKey_TextChanged(object sender, EventArgs e)
         {
-            textKeyViginT.Text.ToUpper();
+            cipherClass.Key.ToUpper();
         }
 
         //=========================================================================
@@ -173,10 +173,12 @@ namespace EncryptingAlgotitms.stream_cipher
 
                 gridV2.Rows[1].HeaderCell.Value = "Текст: ";
 
-                cipherClass.Decrypt(textMessageT.TextLength, textKeyViginT.TextLength, textKeyViginT.Text, textGetShifrT.Text, gridKey, gridV2);
+                cipherClass.Decrypt(cipherClass.OriginalMessage.Length, cipherClass.Key.Length, 
+                                    cipherClass.Key, textGetShifrT.Text, gridKey, gridV2);
            
                 //Помещаем расшифрованное сообщение в текстовое поле
-                textDeShifrT.Text = cipherClass.Decrypt(textMessageT.TextLength, textKeyViginT.TextLength, textKeyViginT.Text, textGetShifrT.Text, gridKey, gridV2);
+                textDeShifrT.Text = cipherClass.Decrypt(cipherClass.OriginalMessage.Length, cipherClass.Key.Length, 
+                                                        cipherClass.Key, textGetShifrT.Text, gridKey, gridV2);
             }
             catch (Exception ex)
             {

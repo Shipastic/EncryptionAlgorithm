@@ -6,7 +6,6 @@ namespace EncryptingAlgotitms.permutation_cipher
     public partial class PermutationCipher : Form
     {
         PermutationCipherClass permutationCipherClass = new PermutationCipherClass();
-
         public PermutationCipher()
         {
             InitializeComponent();
@@ -23,7 +22,7 @@ namespace EncryptingAlgotitms.permutation_cipher
 
             permutationCipherClass.Key = textKey.Text;
 
-            string err = permutationCipherClass.CheckDataError(permutationCipherClass.OriginalMessage, permutationCipherClass.Key);
+            string err = permutationCipherClass.CheckDataError();
             if (err != "")
             {
                 MessageBox.Show(err);
@@ -82,19 +81,20 @@ namespace EncryptingAlgotitms.permutation_cipher
 
             grid1.Rows.Clear();
 
-            if (textKey.Text == string.Empty)
+            if (permutationCipherClass.Key == string.Empty)
             {
                 MessageBox.Show("Введите ключ!!");
+                return;
             }
 
             AddColumns(grid1, permutationCipherClass.Key);
 
-            int cols = textKey.TextLength;
+            int cols = permutationCipherClass.Key.Length;
 
             //Вычисляем количество строк
-            int rows = textMessage.TextLength / cols;
+            int rows = permutationCipherClass.OriginalMessage.Length / cols;
 
-            if (textMessage.TextLength % cols > 0)
+            if (permutationCipherClass.OriginalMessage.Length % cols > 0)
             {
                 rows++;
             }
@@ -105,17 +105,17 @@ namespace EncryptingAlgotitms.permutation_cipher
 
             int col = 0; //нулевой столбец
 
-            for (int j = 0; j < textMessage.TextLength; j++)
+            for (int j = 0; j < permutationCipherClass.OriginalMessage.Length; j++)
             {
                 col = j % cols; // вычисляем номер столбца
 
                 row = j / cols; //вычисляем номер строки
 
-                grid1[col, row].Value = textMessage.Text[j];
+                grid1[col, row].Value = permutationCipherClass.OriginalMessage[j];
             }
 
             //Добавляем точки в конец, если длина сообщения не кратна длине ключа
-            for (col++; col < textKey.TextLength; col++)
+            for (col++; col < permutationCipherClass.Key.Length; col++)
             {
                 grid1[col, row].Value = '.';
             }
@@ -129,18 +129,18 @@ namespace EncryptingAlgotitms.permutation_cipher
         private void FillGrid2()
         {
 
+            if (permutationCipherClass.Key == string.Empty)
+            {
+                MessageBox.Show("Введите ключ!!");
+                return;
+            }
+
             AddColumns(grid2, textKeyABC.Text);
 
-            try
-            {
-                grid2.Rows.Clear();
+            grid2.Rows.Clear();
 
-                grid2.Rows.Add(grid1.RowCount); //Добавляем такое же количество строк. как в первом гриде
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Введите текст!");
-            }
+            grid2.Rows.Add(grid1.RowCount); //Добавляем такое же количество строк. как в первом гриде
+          
             //установка алфавитного ключа в грид
             //Заполнение грида по  столбцу
             for (int columnIndex = 0; columnIndex < textKeyABC.TextLength; columnIndex++)

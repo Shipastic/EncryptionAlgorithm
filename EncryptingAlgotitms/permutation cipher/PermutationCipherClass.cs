@@ -4,8 +4,11 @@ using System.Windows.Forms;
 
 namespace EncryptingAlgotitms.permutation_cipher
 {
-    class PermutationCipherClass : BaseClassEncrypting
+    public class PermutationCipherClass : BaseClassEncrypting
     {
+        public override string OriginalMessage { get => base.OriginalMessage; set => base.OriginalMessage = value; }
+        public override string Key { get => base.Key; set => base.Key = value; }
+
         //================================================================================================================================
         /// <summary>
         /// Метод для зашифровки текста
@@ -38,8 +41,7 @@ namespace EncryptingAlgotitms.permutation_cipher
         /// <returns></returns>
         public override string Decrypt(int rowCount, int keyLength, DataGridView gridView)
         {
-
-            int[,] arr = new int[rowCount, keyLength];
+            _ = new int[rowCount, keyLength];
 
             StringBuilder sb = new StringBuilder();
 
@@ -75,14 +77,14 @@ namespace EncryptingAlgotitms.permutation_cipher
         /// <param name="MessageText">сообщение</param>
         /// <param name="KeyMessage">ключ</param>
         /// <returns></returns>
-        public override string CheckDataError(string MessageText, string KeyMessage)
+        public override string CheckDataError()
         {
-            if (MessageText == string.Empty)
+            if (OriginalMessage == string.Empty)
             {
                 return "Введите сообщение для зашифровки";
             }
 
-            if (IsEqualsLetters(KeyMessage))
+            if (IsEqualsLetters(Key))
             {
                 return "В ключе не должны повторяться символы!!!";
             }

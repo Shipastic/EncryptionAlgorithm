@@ -14,7 +14,6 @@ namespace EncryptingAlgotitms
         {
             InitializeComponent();
         }
-
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.Cascade);

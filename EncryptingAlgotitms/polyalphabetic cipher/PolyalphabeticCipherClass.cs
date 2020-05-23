@@ -7,6 +7,9 @@ namespace EncryptingAlgotitms.polyalphabetic_cipher
     class PolyalphabeticCipherClass : BaseClassEncrypting
     {
 
+        public override string OriginalMessage { get => base.OriginalMessage; set => base.OriginalMessage = value; }
+        public override string Key { get => base.Key; set => base.Key = value; }
+
         string abc = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ ";
 
 //================================================================================================================================
@@ -100,9 +103,9 @@ namespace EncryptingAlgotitms.polyalphabetic_cipher
         /// <param name="MessageText">сообщение</param>
         /// <param name="KeyMessage">ключ</param>
         /// <returns></returns>
-         public override string CheckDataError(string MessageText, string KeyMessage)
+         public override string CheckDataError()
          {
-            foreach (var item in MessageText)
+            foreach (var item in OriginalMessage)
             {
                 if (!abc.Contains(item))
                 {
@@ -110,12 +113,12 @@ namespace EncryptingAlgotitms.polyalphabetic_cipher
                 }
             }
 
-            if (MessageText == string.Empty)
+            if (OriginalMessage == string.Empty)
             {
                 return "Введите сообщение для зашифровки";
             }
 
-            if (IsEqualsLetters(KeyMessage))
+            if (IsEqualsLetters(Key))
             {
              return "В ключе не должны повторяться символы!!!";
             }

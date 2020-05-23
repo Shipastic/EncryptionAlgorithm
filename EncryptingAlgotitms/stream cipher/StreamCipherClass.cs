@@ -5,6 +5,9 @@ namespace EncryptingAlgotitms.stream_cipher
 {
     class StreamCipherClass : BaseClassEncrypting
     {
+        public override string OriginalMessage { get => base.OriginalMessage; set => base.OriginalMessage = value; }
+        public override string Key { get => base.Key; set => base.Key = value; }
+
         //Алфавит для шифрования
         readonly string abcT = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ ";
 
@@ -109,25 +112,25 @@ namespace EncryptingAlgotitms.stream_cipher
         /// <param name="MessageText">Исходное сообщение</param>
         /// <param name="KeyMessage">Ключ</param>
         /// <returns></returns>
-        public override string CheckDataError(string MessageText, string KeyMessage)
+        public override string CheckDataError()
         {
-            if (MessageText == string.Empty)
+            if (OriginalMessage == string.Empty)
             {
                 return "Введите сообщение для зашифровки!";
             }
             
-            if (KeyMessage == string.Empty)
+            if (Key == string.Empty)
             {
                 return "Введите ключ!";
             }
 
-            if (IsEqualsLetters(KeyMessage))
+            if (IsEqualsLetters(Key))
             {
                 return "В ключе не должны повторяться символы!!!";
             }
 
            // проверка на символы, отличные от символов алфавита
-            foreach (var item in KeyMessage)
+            foreach (var item in Key)
             {
                 if (!abcT.Contains(item))
                 {
