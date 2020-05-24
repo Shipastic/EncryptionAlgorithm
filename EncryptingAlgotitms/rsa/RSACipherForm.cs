@@ -137,7 +137,7 @@ namespace EncryptingAlgotitms.rsa
             for (int row = 0; row < textPublicMessage.TextLength; row++)
             {
                 gridRSA.Rows.Add();
-                //в столюец colLetter добавляем букву из сообщения
+                //в столбец colLetter добавляем букву из сообщения
                 gridRSA["colLetter", row].Value = textPublicMessage.Text[row];
                 // в столбец colASCII добавляем код этой буквы
                 gridRSA["colASCII", row].Value = Convert.ToInt32(textPublicMessage.Text[row]);
@@ -154,7 +154,6 @@ namespace EncryptingAlgotitms.rsa
         {
             // вызываем метод дешифрования
             textPrivateMessage.Text = rSAcipherClass.Decrypt(textGetD.Text, textGetN_2.Text, gridRSA);
-          
         }
     }
 }

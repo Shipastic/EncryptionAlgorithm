@@ -102,7 +102,7 @@
             this.butGenX.Name = "butGenX";
             this.butGenX.Size = new System.Drawing.Size(184, 39);
             this.butGenX.TabIndex = 7;
-            this.butGenX.Text = "Расчитать";
+            this.butGenX.Text = "Рассчитать";
             this.butGenX.UseVisualStyleBackColor = false;
             this.butGenX.Click += new System.EventHandler(this.ButGenX_Click);
             // 
@@ -223,7 +223,7 @@
             this.butGenY.Name = "butGenY";
             this.butGenY.Size = new System.Drawing.Size(184, 39);
             this.butGenY.TabIndex = 7;
-            this.butGenY.Text = "Расчитать";
+            this.butGenY.Text = "Рассчитать";
             this.butGenY.UseVisualStyleBackColor = false;
             this.butGenY.Click += new System.EventHandler(this.ButGenY_Click);
             // 

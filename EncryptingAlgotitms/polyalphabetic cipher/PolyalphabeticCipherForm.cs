@@ -11,7 +11,7 @@ namespace EncryptingAlgotitms.polyalphabetic_cipher
             InitializeComponent();
         }
 
-        readonly string abc = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ ";
+        readonly string abc = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
 
 //=========================================================================
         /// <summary>
@@ -138,9 +138,9 @@ namespace EncryptingAlgotitms.polyalphabetic_cipher
         /// <param name="e"></param>
         private void ButtonDeShifr_Click(object sender, EventArgs e)
         {
-            polyalphabetic.CipherMessage = textGetShifr.Text;
+            //polyalphabetic.CipherMessage = textGetShifr.Text;
 
-            polyalphabetic.Key = textGetKey.Text;
+            //polyalphabetic.Key = textGetKey.Text;
 
 
             string err = polyalphabetic.CheckDataError();

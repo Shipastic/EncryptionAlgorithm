@@ -5,11 +5,9 @@ namespace EncryptingAlgotitms.stream_cipher
 {
     class StreamCipherClass : BaseClassEncrypting
     {
-        public override string OriginalMessage { get => base.OriginalMessage; set => base.OriginalMessage = value; }
-        public override string Key { get => base.Key; set => base.Key = value; }
 
         //Алфавит для шифрования
-        readonly string abcT = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ ";
+        readonly string abcT = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
 
 //=========================================================================      
         /// <summary>

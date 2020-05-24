@@ -79,5 +79,6 @@ namespace EncryptingAlgotitms
             AboutProgramForm Apf = new AboutProgramForm();
             Apf.ShowDialog();
         }
+
     }
 }

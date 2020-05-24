@@ -6,9 +6,7 @@ namespace EncryptingAlgotitms.permutation_cipher
 {
     public class PermutationCipherClass : BaseClassEncrypting
     {
-        public override string OriginalMessage { get => base.OriginalMessage; set => base.OriginalMessage = value; }
-        public override string Key { get => base.Key; set => base.Key = value; }
-
+ 
         //================================================================================================================================
         /// <summary>
         /// Метод для зашифровки текста
@@ -32,7 +30,7 @@ namespace EncryptingAlgotitms.permutation_cipher
 
         }
 
-        //================================================================================================================================
+//================================================================================================================================
         /// <summary>
         /// Метод для зашифровки сообщения
         /// </summary>

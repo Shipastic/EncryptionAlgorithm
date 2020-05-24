@@ -2,25 +2,19 @@
 
 namespace EncryptingAlgotitms
 {
-      public class BaseClassEncrypting
+    public class BaseClassEncrypting
     {
-        public string originalMessage; //Исходный текст
+        string originalMessage; //Исходный текст
 
-        public string cipherMessage;   //Зашифрованное сообщение
+        string key;             //Ключ для шифрования/дешифрования
 
-        public string key;             //Ключ для шифрования/дешифрования
-
-        public string decryptedMessage;//Расшифрованный текст
 
         //Создаем свойства для полей класса
-        public virtual string OriginalMessage { get => originalMessage; set => originalMessage = value; }
+        public string OriginalMessage { get => originalMessage; set => originalMessage = value; }
 
-        public virtual string CipherMessage { get => cipherMessage;   set => cipherMessage = value; }
+        public string Key { get => key; set => key = value; }
 
-        public virtual string Key { get => key; set => key = value; }
-
-        public virtual string DecryptedMessage { get => decryptedMessage;  set => decryptedMessage = value; }
-
+        // Перегруженные метод
         public virtual void Encrypt(string str1, string str2, DataGridView gridView) { }//Метод для зашифровки сообщения
   
         public virtual string Encrypt(int num1, int num2, DataGridView gridView) //Метод для зашифровки сообщения

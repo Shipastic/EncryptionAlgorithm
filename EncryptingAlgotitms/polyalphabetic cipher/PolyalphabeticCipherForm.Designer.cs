@@ -227,6 +227,7 @@
             // gridKey
             // 
             this.gridKey.AllowUserToAddRows = false;
+            this.gridKey.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridKey.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridKey.Location = new System.Drawing.Point(4, 104);
             this.gridKey.Name = "gridKey";

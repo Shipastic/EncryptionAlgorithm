@@ -7,10 +7,7 @@ namespace EncryptingAlgotitms.polyalphabetic_cipher
     class PolyalphabeticCipherClass : BaseClassEncrypting
     {
 
-        public override string OriginalMessage { get => base.OriginalMessage; set => base.OriginalMessage = value; }
-        public override string Key { get => base.Key; set => base.Key = value; }
-
-        string abc = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ ";
+        string abc = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
 
 //================================================================================================================================
         /// <summary>
