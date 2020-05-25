@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 namespace EncryptingAlgotitms.stream_cipher
 {
-    class StreamCipherClass : BaseClassEncrypting
+    class StreamCipherClass : BasePolyalphabeticClass
     {
 
         //Алфавит для шифрования
-        readonly string abcT = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+        new string AbcSymbol = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
 
 //=========================================================================      
         /// <summary>
@@ -27,9 +27,9 @@ namespace EncryptingAlgotitms.stream_cipher
             {
                 string letter;
 
-                if (abcT.Contains(message[col]))
-                    letter = gridViewKey[abcT.IndexOf(message[col]),
-                                     abcT.IndexOf(keymessage[col])].Value.ToString();
+                if (AbcSymbol.Contains(message[col]))
+                    letter = gridViewKey[AbcSymbol.IndexOf(message[col]),
+                                     AbcSymbol.IndexOf(keymessage[col])].Value.ToString();
                 else
                     letter = message[col].ToString();
 
@@ -85,11 +85,11 @@ namespace EncryptingAlgotitms.stream_cipher
                  * в этом столбце находим символ, равный символу во второй строке грида
                  * и записываем его в переменную letter
                  */
-                for (int row = 0; row < abcT.Length; row++)
+                for (int row = 0; row < AbcSymbol.Length; row++)
                 {
-                    if (gridViewKey[abcT.IndexOf(key), row].Value.ToString() == quest)
+                    if (gridViewKey[AbcSymbol.IndexOf(key), row].Value.ToString() == quest)
                     {
-                        letter = abcT[row].ToString();
+                        letter = AbcSymbol[row].ToString();
 
                         break;
                     }
@@ -112,14 +112,17 @@ namespace EncryptingAlgotitms.stream_cipher
         /// <returns></returns>
         public override string CheckDataError()
         {
+            foreach (var item in OriginalMessage)
+            {
+                if (!AbcSymbol.Contains(item))
+                {
+                    return "Введены недопустимые символы";
+                }
+            }
+
             if (OriginalMessage == string.Empty)
             {
-                return "Введите сообщение для зашифровки!";
-            }
-            
-            if (Key == string.Empty)
-            {
-                return "Введите ключ!";
+                return "Введите сообщение для зашифровки";
             }
 
             if (IsEqualsLetters(Key))
@@ -127,10 +130,10 @@ namespace EncryptingAlgotitms.stream_cipher
                 return "В ключе не должны повторяться символы!!!";
             }
 
-           // проверка на символы, отличные от символов алфавита
+            // проверка на символы, отличные от символов алфавита
             foreach (var item in Key)
             {
-                if (!abcT.Contains(item))
+                if (!AbcSymbol.Contains(item))
                 {
                     return "Введены недопустимые символы\nДоступны только буквы русского алфавита";
                 }

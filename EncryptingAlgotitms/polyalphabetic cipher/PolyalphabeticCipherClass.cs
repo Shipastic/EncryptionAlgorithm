@@ -4,10 +4,9 @@ using System.Windows.Forms;
 
 namespace EncryptingAlgotitms.polyalphabetic_cipher
 {
-    class PolyalphabeticCipherClass : BaseClassEncrypting
+    class PolyalphabeticCipherClass : BasePolyalphabeticClass
     {
-
-        string abc = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+        new string AbcSymbol = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
 
 //================================================================================================================================
         /// <summary>
@@ -31,14 +30,14 @@ namespace EncryptingAlgotitms.polyalphabetic_cipher
             {
 
                 //Проверяем, содержится ли буква сообщения в нашем алфавите
-                if (abc.Contains(message[col]))
+                if (AbcSymbol.Contains(message[col]))
                 {
                     /*
                      * Нужный зашифрованный символ находится
                      * на пересечении символов ключа и сообщения
                      * в ключевом гриде
                      */
-                    letter = Convert.ToChar(gridViewKey[abc.IndexOf(message[col]),       // Из нашего алфавита получаем индекс текущего символа - получаем столбец
+                    letter = Convert.ToChar(gridViewKey[AbcSymbol.IndexOf(message[col]),       // Из нашего алфавита получаем индекс текущего символа - получаем столбец
                                             col % messageKeyLength].Value.ToString());
                 }
                 else
@@ -73,12 +72,12 @@ namespace EncryptingAlgotitms.polyalphabetic_cipher
 
             for (int col = 0; col < messLength; col++)
             {
-                if (abc.Contains(messageShifr[col]))
+                if (AbcSymbol.Contains(messageShifr[col]))
                 {
-                    for (int k = 0; k < abc.Length; k++)
+                    for (int k = 0; k < AbcSymbol.Length; k++)
                         if (gridViewKey[k, col % messageGetKeyLength].Value.ToString() == messageShifr[col].ToString())
                         {
-                            letter = abc[k].ToString();
+                            letter = AbcSymbol[k].ToString();
 
                             break;
                         }
@@ -104,7 +103,7 @@ namespace EncryptingAlgotitms.polyalphabetic_cipher
          {
             foreach (var item in OriginalMessage)
             {
-                if (!abc.Contains(item))
+                if (!AbcSymbol.Contains(item))
                 {
                     return "Введены недопустимые символы";
                 }
@@ -120,6 +119,14 @@ namespace EncryptingAlgotitms.polyalphabetic_cipher
              return "В ключе не должны повторяться символы!!!";
             }
 
+            // проверка на символы, отличные от символов алфавита
+            foreach (var item in Key)
+            {
+                if (!AbcSymbol.Contains(item))
+                {
+                    return "Введены недопустимые символы\nДоступны только буквы русского алфавита";
+                }
+            }
             return "";
          }
 

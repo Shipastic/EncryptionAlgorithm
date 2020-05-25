@@ -59,6 +59,7 @@
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BasePolyalphabeticClass.cs" />
     <Compile Include="key exchage DH\KeyExchangeClass.cs" />
     <Compile Include="key exchage DH\KeyExchangeForm.cs">
       <SubType>Form</SubType>
